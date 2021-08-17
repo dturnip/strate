@@ -7,7 +7,7 @@ import Tutorial from './pages/Tutorial';
 function App() {
     console.log(process.env.PUBLIC_URL);
     return (
-        <HashRouter>
+        <HashRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route exact path={"/"} component={Home} />
                 <Route exact path={"/tutorial"} component={Tutorial} />
