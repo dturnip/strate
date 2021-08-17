@@ -1,18 +1,18 @@
 import React from 'react';
 import './styles/app/app.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Tutorial from './pages/Tutorial';
 
 function App() {
     console.log(process.env.PUBLIC_URL);
     return (
-        <Router basename={process.env.PUBLIC_URL}>
+        <HashRouter>
             <Switch>
                 <Route exact path={"/"} component={Home} />
                 <Route exact path={"/tutorial"} component={Tutorial} />
             </Switch>
-        </Router>
+        </HashRouter>
     )
   // return (
   //     <Router basename={process.env.PUBLIC_URL}>
