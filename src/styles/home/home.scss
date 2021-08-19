@@ -19,4 +19,15 @@
             margin: auto;
         }
     }
+
+    > #start-wrapper {
+        background-color: $shoot;
+        width: 30%;
+        max-width: 240px;
+        text-align: center;
+
+        > #start-bt {
+
+        }
+    }
 }

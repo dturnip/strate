@@ -15,5 +15,11 @@
   height: auto;
   margin: auto;
 }
+.flex-wrapper > #start-wrapper {
+  background-color: rgba(255, 0, 0, 0.3);
+  width: 30%;
+  max-width: 240px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=home.css.map */
