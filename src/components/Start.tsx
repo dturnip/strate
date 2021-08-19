@@ -9,6 +9,9 @@ export const Start: React.FC = () => {
                 <div id={"cb-wrapper"}>
                     <img id={"coffee-bk"} src={coffeebk} alt={"coffee-bk"}/>
                 </div>
+                <div id={"start-wrapper"}>
+                    <span id={"start-bt"}>Start!</span>
+                </div>
             </div>
         </>
     )
