@@ -26,8 +26,11 @@ yarn-error.log*
 .idea
 *.iml
 
-#sass
+# sass
 .sass-cache/
 *.css.map
 *.sass.map
 *.scss.map
+
+# style mixins
+src/styles/lib/mixins/mixins.css*
