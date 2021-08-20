@@ -23,14 +23,14 @@
     }
 
     > #bt-wrapper {
-
         > #start-bt {
             @include text($wtintd, 4vw);
             background-color: $vlight;
             font-weight: bolder;
             border: 0.5vw solid $vlightb;
             border-radius: 20vw;
-            padding: 2vw 10vw;
+            padding: 20px 80px;
+            max-width: 240px;
         }
     }
 }

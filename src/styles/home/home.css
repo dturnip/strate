@@ -25,7 +25,8 @@
   font-weight: bolder;
   border: 0.5vw solid #AC896E;
   border-radius: 20vw;
-  padding: 2vw 10vw;
+  padding: 20px 80px;
+  max-width: 240px;
 }
 
 /*# sourceMappingURL=home.css.map */
