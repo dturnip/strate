@@ -1,0 +1,13 @@
+.cell {
+  height: 8vw;
+  width: 8vw;
+  max-height: 70px;
+  max-width: 70px;
+  text-align: center;
+  line-height: 70px;
+  box-shadow: 0 2px 2px #91745D inset, 0 2px #91745D;
+  border-radius: 5%;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=cell.css.map */
