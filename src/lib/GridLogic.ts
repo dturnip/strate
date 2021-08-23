@@ -60,5 +60,15 @@ export const reverseGrid = (grid: Array<Array<number>>): Array<Array<number>> =>
     return newGrid;
 }
 
+export const rotateGridAnticlockwise = (grid: Array<Array<number>>): Array<Array<number>> => {
+    const newGrid: Array<Array<number>> = newEmptyGrid();
+    for (let r = 0; r < grid.length; r++) {
+        for (let c = 0; c < grid[r].length; c++) {
+            newGrid[r][c] = grid[c][grid[r].length - r - 1];
+        }
+    }
+    return newGrid;
+}
+
     return compressGrid(mergedGrid);
 }
