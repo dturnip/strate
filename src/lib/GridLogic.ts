@@ -86,3 +86,9 @@ export const morphLeft = (grid: Array<Array<number>>): Array<Array<number>> => {
     return compressGrid(mergedGrid);
 }
 
+export const morphRight = (grid: Array<Array<number>>): Array<Array<number>> => {
+    const reversedGrid: Array<Array<number>> = reverseGrid(grid);
+    const shiftedGrid: Array<Array<number>> = morphLeft(reversedGrid);
+    return reverseGrid(shiftedGrid);
+}
+
