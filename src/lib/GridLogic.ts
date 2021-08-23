@@ -80,5 +80,9 @@ export const rotateGridClockwise = (grid: Array<Array<number>>): Array<Array<num
     return newGrid;
 }
 
+export const morphLeft = (grid: Array<Array<number>>): Array<Array<number>> => {
+    const compressedGrid: Array<Array<number>> = compressGrid(grid);
+    const mergedGrid: Array<Array<number>> = mergeGrid(compressedGrid);
     return compressGrid(mergedGrid);
 }
+
