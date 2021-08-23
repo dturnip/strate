@@ -50,8 +50,15 @@ export const mergeGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
     return grid;
 }
 
-export const handleLeft = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const compressedGrid = compressGrid(grid);
-    const mergedGrid = mergeGrid(compressedGrid);
+export const reverseGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
+    const newGrid: Array<Array<number>> = newEmptyGrid();
+    for (let r = 0; r < grid.length; r++) {
+        for (let c = 0; c < grid[r].length; c++) {
+            newGrid[r][c] = grid[r][grid[r].length - c - 1];
+        }
+    }
+    return newGrid;
+}
+
     return compressGrid(mergedGrid);
 }
