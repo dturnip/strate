@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/game/cell.css';
 import '../styles/game/board.css';
 import {GameCell} from "../types/interface";
-import { handleLeft } from "../lib/GridLogic";
+import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
 
 const gridN: number = 8;
 
