@@ -24,3 +24,16 @@ export const gridIsFull = (grid: Array<Array<number>>): boolean => {
     return !hasValue(grid, 0);
 }
 
+export const compressGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
+    const newGrid: Array<Array<number>> = newEmptyGrid();
+    for (let r = 0; r < grid.length; r++) {
+        let cidx: number = 0;
+        for (let c = 0; c < grid[r].length; c++) {
+            if (grid[r][c] !== 0) {
+                newGrid[r][cidx] = grid[r][c];
+                cidx++;
+            }
+        }
+    }
+    return newGrid;
+}
