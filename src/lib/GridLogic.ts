@@ -11,3 +11,12 @@ export const newEmptyGrid = (): Array<Array<number>> => {
     return grid;
 }
 
+export const hasValue = (grid: Array<Array<number>>, v: number): boolean => {
+    for (let r = 0; r < grid.length; r++) {
+        for (let c = 0; c < grid[r].length; c++) {
+            if (grid[r][c] === v) return true;
+        }
+    }
+    return false;
+}
+
