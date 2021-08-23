@@ -92,3 +92,9 @@ export const morphRight = (grid: Array<Array<number>>): Array<Array<number>> => 
     return reverseGrid(shiftedGrid);
 }
 
+export const morphUp = (grid: Array<Array<number>>): Array<Array<number>> => {
+    const rotatedAnticlockwiseGrid: Array<Array<number>> = rotateGridAnticlockwise(grid);
+    const shiftedGrid: Array<Array<number>> = morphLeft(rotatedAnticlockwiseGrid);
+    return rotateGridClockwise(shiftedGrid);
+}
+
