@@ -37,3 +37,16 @@ export const compressGrid = (grid: Array<Array<number>>): Array<Array<number>> =
     }
     return newGrid;
 }
+
+export const mergeGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
+    for (let r = 0; r < grid.length; r++) {
+        for (let c = 0; c < grid[r].length - 1; c++) {
+            if (grid[r][c] !== 0 && grid[r][c] === grid[r][c + 1]) {
+                grid[r][c] = grid[r][c] * 2;
+                grid[r][c + 1] = 0;
+            }
+        }
+    }
+    return grid;
+}
+
