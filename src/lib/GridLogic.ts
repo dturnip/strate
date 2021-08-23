@@ -20,3 +20,7 @@ export const hasValue = (grid: Array<Array<number>>, v: number): boolean => {
     return false;
 }
 
+export const gridIsFull = (grid: Array<Array<number>>): boolean => {
+    return !hasValue(grid, 0);
+}
+
