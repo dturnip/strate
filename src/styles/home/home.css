@@ -7,11 +7,10 @@
   justify-content: space-evenly;
 }
 .flex-wrapper > #cb-wrapper {
-  width: 50%;
+  width: 40%;
   max-width: 400px;
 }
 .flex-wrapper > #cb-wrapper > #coffee-bk {
-  display: block;
   width: 100%;
   height: auto;
   margin: auto;
@@ -19,14 +18,13 @@
 .flex-wrapper > #bt-wrapper > #start-bt {
   font-family: "JetBrains Mono", monospace;
   color: #FEE1CA;
-  font-size: 4vw;
+  font-size: 5vh;
   font-variant-ligatures: none;
   background-color: #987961;
   font-weight: bolder;
-  border: 0.5vw solid #AC896E;
-  border-radius: 20vw;
-  padding: 20px 80px;
-  max-width: 240px;
+  border: 0.5vh solid #AC896E;
+  border-radius: 1.5vw;
+  padding: 0.5vh 3vw;
 }
 
 /*# sourceMappingURL=home.css.map */
