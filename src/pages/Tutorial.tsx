@@ -4,7 +4,7 @@ import { GameBoard } from "../components/GameBoard";
 const Tutorial = () => {
     return (
         <>
-            <h1>Tutorial</h1>
+            <h1>Game</h1>
             <GameBoard />
         </>
     )
