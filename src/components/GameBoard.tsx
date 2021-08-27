@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/game/cell.css';
 import '../styles/game/board.css';
-import {GameCell} from "../types/interface";
+import { GameCell } from "../types/interfaces";
 import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
 
 const Cell: React.FC<GameCell> = ({n}) => {
@@ -41,7 +41,7 @@ export const GameBoard: React.FC = () => {
 		}
 	}
 
-	// handleMove("left");
+	handleMove("left");
 	// handleMove("up");
 	// handleMove("down");
 	// handleMove("right");
