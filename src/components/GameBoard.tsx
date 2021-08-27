@@ -30,8 +30,8 @@ export const GameBoard: React.FC = () => {
             <div className={"board"}>
                 {grid.map((r) => {
                     return (
-                        r.map((c) => {
-                            return <Cell n={c}/>
+                        r.map((c, idx) => {
+                            return <Cell n={c} key={idx}/>
                         })
                     )
                 })}
