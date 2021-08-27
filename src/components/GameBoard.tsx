@@ -21,10 +21,28 @@ const Cell: React.FC<GameCell> = ({n}) => {
 //     }
 // }
 
-    }
-}
+export const GameBoard: React.FC = () => {
+	let grid = [...Array(8)].map(_ => Array(8).fill(2));
+
+	const handleMove = (dir: string): void => {
+		switch (dir) {
+			case "up":
+				grid = morphUp(grid);
+				break;
+			case "right":
+				grid = morphRight(grid);
+				break;
+			case "down":
+				grid = morphDown(grid);
+				break;
+			case "left":
+				grid = morphLeft(grid);
+				break;
+		}
+	}
 
 export const GameBoard: React.FC = () => {
+
     return (
         <div className={"board-wrapper"}>
             <div className={"board"}>
