@@ -41,7 +41,12 @@ export const GameBoard: React.FC = () => {
 		}
 	}
 
-export const GameBoard: React.FC = () => {
+	// handleMove("left");
+	// handleMove("up");
+	// handleMove("down");
+	// handleMove("right");
+	// handleMove("left");
+	// handleMove("up");
 
     return (
         <div className={"board-wrapper"}>
