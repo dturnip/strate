@@ -4,8 +4,6 @@ import '../styles/game/board.css';
 import {GameCell} from "../types/interface";
 import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
 
-const gridN: number = 8;
-
 const Cell: React.FC<GameCell> = ({n}) => {
     return (
         <div className={"cell"}>
