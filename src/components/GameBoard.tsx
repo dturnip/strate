@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/game/cell.css';
 import '../styles/game/board.css';
 import { GameCell } from "../types/interfaces";
+import { Direction } from "../types/enums";
 import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
 
 const Cell: React.FC<GameCell> = ({n}) => {
@@ -24,29 +25,29 @@ const Cell: React.FC<GameCell> = ({n}) => {
 export const GameBoard: React.FC = () => {
 	let grid = [...Array(8)].map(_ => Array(8).fill(2));
 
-	const handleMove = (dir: string): void => {
+	const handleMove = (dir: Direction): void => {
 		switch (dir) {
-			case "up":
+			case Direction.Up:
 				grid = morphUp(grid);
 				break;
-			case "right":
+			case Direction.Right:
 				grid = morphRight(grid);
 				break;
-			case "down":
+			case Direction.Down:
 				grid = morphDown(grid);
 				break;
-			case "left":
+			case Direction.Left:
 				grid = morphLeft(grid);
 				break;
 		}
 	}
 
-	handleMove("left");
-	// handleMove("up");
-	// handleMove("down");
-	// handleMove("right");
-	// handleMove("left");
-	// handleMove("up");
+	handleMove(Direction.Left);
+	// handleMove(Direction.Up);
+	// handleMove(Direction.Down);
+	// handleMove(Direction.Right);
+	// handleMove(Direction.Left);
+	// handleMove(Direction.Up);
 
     return (
         <div className={"board-wrapper"}>
