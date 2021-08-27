@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/game/cell.css';
 import '../styles/game/board.css';
 import {GameCell} from "../types/interface";
