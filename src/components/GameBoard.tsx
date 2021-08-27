@@ -28,9 +28,9 @@ export const GameBoard: React.FC = () => {
     return (
         <div className={"board-wrapper"}>
             <div className={"board"}>
-                {grid.map((r) => {
+                {grid.map((r: number[]) => {
                     return (
-                        r.map((c, idx) => {
+                        r.map((c: number, idx: number) => {
                             return <Cell n={c} key={idx}/>
                         })
                     )
