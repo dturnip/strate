@@ -3,7 +3,7 @@ import '../styles/game/cell.css';
 import '../styles/game/board.css';
 import { GameCell } from "../types/interfaces";
 import { NNA } from "../types/aliases";
-import { morphRight, morphLeft, morphUp, morphDown } from "../lib/FixedGridLogic";
+import { morphRight, morphLeft, morphUp, morphDown } from "../lib/GridLogic";
 
 const Cell: React.FC<GameCell> = ({n}) => {
     return (
