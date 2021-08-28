@@ -7,7 +7,38 @@
   line-height: 70px;
   box-shadow: 0 2px 2px #91745D inset, 0 2px #91745D;
   border-radius: 5%;
-  z-index: -1;
+}
+
+.type2 {
+  background-color: #A3D6FE;
+}
+
+.type4 {
+  background-color: #CBA3FE;
+}
+
+.type8 {
+  background-color: #FECBA3;
+}
+
+.type16 {
+  background-color: #A3FECA;
+}
+
+.type32 {
+  background-color: #FDD269;
+}
+
+.type64 {
+  background-color: #FEFDFC;
+}
+
+.type128 {
+  background-color: #FEAAA3;
+}
+
+.type256 {
+  background-color: #A6A3FE;
 }
 
 /*# sourceMappingURL=cell.css.map */

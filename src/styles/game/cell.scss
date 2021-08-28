@@ -9,5 +9,37 @@
     line-height: 70px;
     box-shadow: 0 2px 2px $sblackd inset, 0 2px $sblackd;
     border-radius: 5%;
-    z-index: -1;
 }
+
+.type2 {
+	background-color: $accent;
+}
+
+.type4 {
+	background-color: $accentb;
+}
+
+.type8 {
+	background-color: $accentc;
+}
+
+.type16 {
+	background-color: $accentd;
+}
+
+.type32 {
+	background-color: $mildacnt;
+}
+
+.type64 {
+	background-color: $charmbase;
+}
+
+.type128 {
+	background-color: $hueg;
+}
+
+.type256 {
+	background-color: $charmbcnt;
+}
+
