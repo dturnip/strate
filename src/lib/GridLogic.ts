@@ -82,9 +82,9 @@ export const rotateGridClockwise = (grid: NNA): NNA => {
 }
 
 export const morphLeft = (grid: NNA): NNA => {
-    const compressedGrid: NNA = compressGrid(grid);
-    const mergedGrid: NNA = mergeGrid(compressedGrid);
-    return compressGrid(mergedGrid);
+    const reversedGrid: NNA = compressGrid(grid);
+    const shiftedGrid: NNA = mergeGrid(reversedGrid);
+    return compressGrid(shiftedGrid);
 }
 
 export const morphRight = (grid: NNA): NNA => {
