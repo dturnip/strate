@@ -17,3 +17,13 @@ import {NNA} from "../types/aliases";
 // 	return ret;
 // }
 
+export const compressRight = (matrix: NNA): NNA => {
+	let ret: NNA = [];
+	for (let r = 0; r < matrix.length; r++) {
+		let filtered: Array<number> = matrix[r].filter(v => v);
+		let shiftct: Array<number> = Array(matrix[r].length - filtered.length).fill(0);
+		ret.push(shiftct.concat(filtered));
+	}
+	return ret;
+}
+
