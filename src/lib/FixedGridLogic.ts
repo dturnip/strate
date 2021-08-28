@@ -75,6 +75,22 @@ export const mergeX = (matrix: NNA): NNA => {
 	return matrix;
 }
 
+export const mergeY = (matrix: NNA): NNA => {
+	for (let r = 0; r < matrix.length; r++) {
+		for (let c = 0; c < matrix[r].length; c++) {
+			if (c === matrix[r].length - 1) {
+				continue;
+			}
+			if (matrix[r][c] === matrix[r][c + 1]) {
+				let merge: number = matrix[r][c] + matrix[r][c + 1];
+				matrix[r][c] = merge;
+				matrix[r][c + 1] = 0;
+			}
+		}
+	}
+	return transposeToRows(matrix);
+}
+
 export const morphRight = (matrix: NNA): NNA => {
 	return compressRight(mergeX(compressRight(matrix)));
 }
