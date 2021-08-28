@@ -37,36 +37,37 @@ const newRandShootMatrix = (): NNA => {
 }
 
 export const GameBoard: React.FC = () => {
-	let grid = [...Array(8)].map(_ => Array(8).fill(2));
+	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newShootMatrix(2));
+	const [cellMatrix, updateCellMatrix] = useState<NNA>(newRandShootMatrix());
 
-	const handleMove = (dir: Direction): void => {
-		switch (dir) {
-			case Direction.Up:
-				grid = morphUp(grid);
+	const handleKeyDown = (event: KeyboardEvent) => {
+		switch (event.key) {
+			case "ArrowUp":
+				updateCellMatrix(morphUp(cellMatrix));
 				break;
-			case Direction.Right:
-				grid = morphRight(grid);
+			case "ArrowRight":
+				updateCellMatrix(morphRight(cellMatrix));
 				break;
-			case Direction.Down:
-				grid = morphDown(grid);
+			case "ArrowDown":
+				updateCellMatrix(morphDown(cellMatrix));
 				break;
-			case Direction.Left:
-				grid = morphLeft(grid);
+			case "ArrowLeft":
+				updateCellMatrix(morphLeft(cellMatrix));
 				break;
 		}
 	}
 
-	handleMove(Direction.Left);
-	// handleMove(Direction.Up);
-	// handleMove(Direction.Down);
-	// handleMove(Direction.Right);
-	// handleMove(Direction.Left);
-	// handleMove(Direction.Up);
+	useEffect(() => {
+		window.addEventListener('keydown', handleKeyDown);
+		return () => {
+			window.removeEventListener('keydown', handleKeyDown);
+		};
+	});
 
     return (
         <div className={"board-wrapper"}>
             <div className={"board"}>
-                {grid.map((r: number[]) => {
+                {cellMatrix.map((r: number[]) => {
                     return (
                         r.map((c: number, idx: number) => {
                             return <Cell n={c} key={idx}/>
