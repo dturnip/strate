@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/game/cell.css';
-import '../styles/game/board.css';
+import '../styles/game/cell.scss';
+import '../styles/game/board.scss';
 import { GameCell } from "../types/interfaces";
 import { NNA } from "../types/aliases";
 import { morphRight, morphLeft, morphUp, morphDown } from "../lib/GridLogic";

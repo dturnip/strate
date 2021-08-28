@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import coffeebk from '../img/coffee-bk.png';
-import '../styles/home/home.css';
+import '../styles/home/home.scss';
 
 export const Start: React.FC = () => {
     return (
