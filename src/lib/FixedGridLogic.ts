@@ -44,3 +44,7 @@ export const mergeX = (matrix: NNA): NNA => {
 	return matrix;
 }
 
+export const morphRight = (matrix: NNA): NNA => {
+	return compressRight(mergeX(compressRight(matrix)));
+}
+
