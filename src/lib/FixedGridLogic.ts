@@ -37,6 +37,28 @@ export const transposeToRows = (matrix: NNA): NNA => {
 	return transposeToColumns(matrix);
 }
 
+export const compressUp = (matrix: NNA): NNA => {
+	let transform: NNA = transposeToColumns(matrix);
+	let leftCompr: NNA = [];
+	for (let r = 0; r < transform.length; r++) {
+		let filtered: Array<number> = transform[r].filter(v => v);
+		let shiftct: Array<number> = Array(transform[r].length - filtered.length).fill(0);
+		leftCompr.push(filtered.concat(shiftct));
+	}
+	return leftCompr;
+}
+
+export const compressDown = (matrix: NNA): NNA => {
+	let transform: NNA = transposeToColumns(matrix);
+	let rightCompr: NNA = [];
+	for (let r = 0; r < transform.length; r++) {
+		let filtered: Array<number> = transform[r].filter(v => v);
+		let shiftct: Array<number> = Array(transform[r].length - filtered.length).fill(0);
+		rightCompr.push(shiftct.concat(filtered));
+	}
+	return rightCompr;
+}
+
 export const mergeX = (matrix: NNA): NNA => {
 	for (let r = 0; r < matrix.length; r++) {
 		for (let c = 0; c < matrix[r].length; c++) {
