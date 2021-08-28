@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/game/cell.css';
 import '../styles/game/board.css';
 import { GameCell } from "../types/interfaces";
-import { Direction } from "../types/enums";
+import { NNA } from "../types/aliases";
 import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
 
 const Cell: React.FC<GameCell> = ({n}) => {
@@ -13,14 +13,28 @@ const Cell: React.FC<GameCell> = ({n}) => {
     );
 }
 
-// replace with custom map later
-// let grid: Array<Array<number>> = [];
-// for (let r = 0; r < gridN; r++) {
-//     grid.push([]);
-//     for (let c = 0; c < gridN; c++) {
-//         grid[r].push(1);
-//     }
-// }
+const newShootMatrix = (shootInit: number): NNA => {
+	let grid: NNA = [];
+	for (let r = 0; r < 8; r++) {
+		grid.push([]);
+		for (let c = 0; c < 8; c++) {
+			grid[r].push(shootInit);
+		}
+	}
+	return grid;
+}
+
+const newRandShootMatrix = (): NNA => {
+	const shootArray: Array<number> = [0, 2, 4, 8, 16, 32];
+	let grid: NNA = [];
+	for (let r = 0; r < 8; r++) {
+		grid.push([]);
+		for (let c = 0; c < 8; c++) {
+			grid[r].push(shootArray[Math.floor(Math.random() * 7)])
+		}
+	}
+	return grid;
+}
 
 export const GameBoard: React.FC = () => {
 	let grid = [...Array(8)].map(_ => Array(8).fill(2));
