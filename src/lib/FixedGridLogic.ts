@@ -97,4 +97,12 @@ export const morphRight = (matrix: NNA): NNA => {
 
 export const morphLeft = (matrix: NNA): NNA => {
 	return compressLeft(mergeX(compressLeft(matrix)));
+};
+
+export const morphUp = (matrix: NNA): NNA => {
+	return transposeToRows(compressUp(mergeY(compressUp(matrix))));
+}
+
+export const morphDown = (matrix: NNA): NNA => {
+	return transposeToRows(compressDown(mergeY(compressDown(matrix))));
 }
