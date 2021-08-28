@@ -1,6 +1,6 @@
 import {NNA} from "../types/aliases";
 
-export const compressRight = (matrix: NNA): NNA => {
+const compressRight = (matrix: NNA): NNA => {
 	let ret: NNA = [];
 	for (let r = 0; r < matrix.length; r++) {
 		let filtered: Array<number> = matrix[r].filter(v => v);
@@ -10,7 +10,7 @@ export const compressRight = (matrix: NNA): NNA => {
 	return ret;
 }
 
-export const compressLeft = (matrix: NNA): NNA => {
+const compressLeft = (matrix: NNA): NNA => {
 	let ret: NNA = [];
 	for (let r = 0; r < matrix.length; r++) {
 		let filtered: Array<number> = matrix[r].filter(v => v);
@@ -21,7 +21,7 @@ export const compressLeft = (matrix: NNA): NNA => {
 	return ret;
 }
 
-export const transposeToColumns = (matrix: NNA): NNA => {
+const transposeToColumns = (matrix: NNA): NNA => {
 	let cols: NNA = [];
 	for (let r = 0; r < matrix.length; r++) {
 		let col: Array<number> = [];
@@ -33,41 +33,42 @@ export const transposeToColumns = (matrix: NNA): NNA => {
 	return cols;
 }
 
-export const transposeToRows = (matrix: NNA): NNA => {
+const transposeToRows = (matrix: NNA): NNA => {
 	return transposeToColumns(matrix);
 }
 
-export const compressUp = (matrix: NNA): NNA => {
+const compressUp = (matrix: NNA): NNA => {
 	let transform: NNA = transposeToColumns(matrix);
-	let leftCompr: NNA = [];
-	for (let r = 0; r < transform.length; r++) {
-		let filtered: Array<number> = transform[r].filter(v => v);
-		let shiftct: Array<number> = Array(transform[r].length - filtered.length).fill(0);
-		leftCompr.push(filtered.concat(shiftct));
-	}
-	return leftCompr;
+	return compressLeft(transform);
+	// let leftCompr: NNA = [];
+	// for (let r = 0; r < transform.length; r++) {
+	// 	let filtered: Array<number> = transform[r].filter(v => v);
+	// 	let shiftct: Array<number> = Array(transform[r].length - filtered.length).fill(0);
+	// 	leftCompr.push(filtered.concat(shiftct));
+	// }
+	// return leftCompr;
 }
 
-export const compressDown = (matrix: NNA): NNA => {
+const compressDown = (matrix: NNA): NNA => {
 	let transform: NNA = transposeToColumns(matrix);
-	let rightCompr: NNA = [];
-	for (let r = 0; r < transform.length; r++) {
-		let filtered: Array<number> = transform[r].filter(v => v);
-		let shiftct: Array<number> = Array(transform[r].length - filtered.length).fill(0);
-		rightCompr.push(shiftct.concat(filtered));
-	}
-	return rightCompr;
+	return compressRight(transform);
+	// let rightCompr: NNA = [];
+	// for (let r = 0; r < transform.length; r++) {
+	// 	let filtered: Array<number> = transform[r].filter(v => v);
+	// 	let shiftct: Array<number> = Array(transform[r].length - filtered.length).fill(0);
+	// 	rightCompr.push(shiftct.concat(filtered));
+	// }
+	// return rightCompr;
 }
 
-export const mergeX = (matrix: NNA): NNA => {
+const mergeX = (matrix: NNA): NNA => {
 	for (let r = 0; r < matrix.length; r++) {
 		for (let c = 0; c < matrix[r].length; c++) {
 			if (c === matrix[r].length - 1) {
 				continue;
 			}
 			if (matrix[r][c] === matrix[r][c + 1]) {
-				let merge: number = matrix[r][c] + matrix[r][c + 1];
-				matrix[r][c] = merge;
+				matrix[r][c] = matrix[r][c] + matrix[r][c + 1];
 				matrix[r][c + 1] = 0;
 			}
 		}
@@ -75,20 +76,20 @@ export const mergeX = (matrix: NNA): NNA => {
 	return matrix;
 }
 
-export const mergeY = (matrix: NNA): NNA => {
-	for (let r = 0; r < matrix.length; r++) {
-		for (let c = 0; c < matrix[r].length; c++) {
-			if (c === matrix[r].length - 1) {
-				continue;
-			}
-			if (matrix[r][c] === matrix[r][c + 1]) {
-				let merge: number = matrix[r][c] + matrix[r][c + 1];
-				matrix[r][c] = merge;
-				matrix[r][c + 1] = 0;
-			}
-		}
-	}
-	return transposeToRows(matrix);
+const mergeY = (matrix: NNA): NNA => {
+	// for (let r = 0; r < matrix.length; r++) {
+	// 	for (let c = 0; c < matrix[r].length; c++) {
+	// 		if (c === matrix[r].length - 1) {
+	// 			continue;
+	// 		}
+	// 		if (matrix[r][c] === matrix[r][c + 1]) {
+	// 			let merge: number = matrix[r][c] + matrix[r][c + 1];
+	// 			matrix[r][c] = merge;
+	// 			matrix[r][c + 1] = 0;
+	// 		}
+	// 	}
+	// }
+	return transposeToRows(mergeX(matrix));
 }
 
 export const morphRight = (matrix: NNA): NNA => {
