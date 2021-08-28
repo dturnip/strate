@@ -27,6 +27,16 @@ export const compressRight = (matrix: NNA): NNA => {
 	return ret;
 }
 
+export const compressLeft = (matrix: NNA): NNA => {
+	let ret: NNA = [];
+	for (let r = 0; r < matrix.length; r++) {
+		let filtered: Array<number> = matrix[r].filter(v => v);
+		let shiftct: Array<number> = Array(matrix[r].length - filtered.length).fill(0);
+		ret.push(filtered.concat(shiftct));
+	}
+
+	return ret;
+}
 
 export const mergeX = (matrix: NNA): NNA => {
 	for (let r = 0; r < matrix.length; r++) {
@@ -48,3 +58,6 @@ export const morphRight = (matrix: NNA): NNA => {
 	return compressRight(mergeX(compressRight(matrix)));
 }
 
+export const morphLeft = (matrix: NNA): NNA => {
+	return compressLeft(mergeX(compressLeft(matrix)));
+}
