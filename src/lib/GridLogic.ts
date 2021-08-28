@@ -1,7 +1,8 @@
+import { NNA } from '../types/aliases';
 const gridN: number = 8;
 
-export const newEmptyGrid = (): Array<Array<number>> => {
-    let grid: Array<Array<number>> = [];
+export const newEmptyGrid = (): NNA => {
+    let grid: NNA = [];
     for (let r = 0; r < gridN; r++) {
         grid.push([]);
         for (let c = 0; c < gridN; c++) {
@@ -11,7 +12,7 @@ export const newEmptyGrid = (): Array<Array<number>> => {
     return grid;
 }
 
-export const hasValue = (grid: Array<Array<number>>, v: number): boolean => {
+export const hasValue = (grid: NNA, v: number): boolean => {
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length; c++) {
             if (grid[r][c] === v) return true;
@@ -20,12 +21,12 @@ export const hasValue = (grid: Array<Array<number>>, v: number): boolean => {
     return false;
 }
 
-export const gridIsFull = (grid: Array<Array<number>>): boolean => {
+export const gridIsFull = (grid: NNA): boolean => {
     return !hasValue(grid, 0);
 }
 
-export const compressGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const newGrid: Array<Array<number>> = newEmptyGrid();
+export const compressGrid = (grid: NNA): NNA => {
+    const newGrid: NNA = newEmptyGrid();
     for (let r = 0; r < grid.length; r++) {
         let cidx: number = 0;
         for (let c = 0; c < grid[r].length; c++) {
@@ -38,7 +39,7 @@ export const compressGrid = (grid: Array<Array<number>>): Array<Array<number>> =
     return newGrid;
 }
 
-export const mergeGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
+export const mergeGrid = (grid: NNA): NNA => {
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length - 1; c++) {
             if (grid[r][c] !== 0 && grid[r][c] === grid[r][c + 1]) {
@@ -50,8 +51,8 @@ export const mergeGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
     return grid;
 }
 
-export const reverseGrid = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const newGrid: Array<Array<number>> = newEmptyGrid();
+export const reverseGrid = (grid: NNA): NNA => {
+    const newGrid: NNA = newEmptyGrid();
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length; c++) {
             newGrid[r][c] = grid[r][grid[r].length - c - 1];
@@ -60,8 +61,8 @@ export const reverseGrid = (grid: Array<Array<number>>): Array<Array<number>> =>
     return newGrid;
 }
 
-export const rotateGridAnticlockwise = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const newGrid: Array<Array<number>> = newEmptyGrid();
+export const rotateGridAnticlockwise = (grid: NNA): NNA => {
+    const newGrid: NNA = newEmptyGrid();
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length; c++) {
             newGrid[r][c] = grid[c][grid[r].length - r - 1];
@@ -70,8 +71,8 @@ export const rotateGridAnticlockwise = (grid: Array<Array<number>>): Array<Array
     return newGrid;
 }
 
-export const rotateGridClockwise = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const newGrid: Array<Array<number>> = newEmptyGrid();
+export const rotateGridClockwise = (grid: NNA): NNA => {
+    const newGrid: NNA = newEmptyGrid();
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length; c++) {
             newGrid[r][c] = grid[grid[r].length - c - 1][r];
@@ -80,26 +81,26 @@ export const rotateGridClockwise = (grid: Array<Array<number>>): Array<Array<num
     return newGrid;
 }
 
-export const morphLeft = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const compressedGrid: Array<Array<number>> = compressGrid(grid);
-    const mergedGrid: Array<Array<number>> = mergeGrid(compressedGrid);
+export const morphLeft = (grid: NNA): NNA => {
+    const compressedGrid: NNA = compressGrid(grid);
+    const mergedGrid: NNA = mergeGrid(compressedGrid);
     return compressGrid(mergedGrid);
 }
 
-export const morphRight = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const reversedGrid: Array<Array<number>> = reverseGrid(grid);
-    const shiftedGrid: Array<Array<number>> = morphLeft(reversedGrid);
+export const morphRight = (grid: NNA): NNA => {
+    const reversedGrid: NNA = reverseGrid(grid);
+    const shiftedGrid: NNA = morphLeft(reversedGrid);
     return reverseGrid(shiftedGrid);
 }
 
-export const morphUp = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const rotatedAnticlockwiseGrid: Array<Array<number>> = rotateGridAnticlockwise(grid);
-    const shiftedGrid: Array<Array<number>> = morphLeft(rotatedAnticlockwiseGrid);
+export const morphUp = (grid: NNA): NNA => {
+    const rotatedAnticlockwiseGrid: NNA = rotateGridAnticlockwise(grid);
+    const shiftedGrid: NNA = morphLeft(rotatedAnticlockwiseGrid);
     return rotateGridClockwise(shiftedGrid);
 }
 
-export const morphDown = (grid: Array<Array<number>>): Array<Array<number>> => {
-    const rotatedClockWiseGrid: Array<Array<number>> = rotateGridClockwise(grid);
-    const shiftedGrid: Array<Array<number>> = morphLeft(rotatedClockWiseGrid);
+export const morphDown = (grid: NNA): NNA => {
+    const rotatedClockWiseGrid: NNA = rotateGridClockwise(grid);
+    const shiftedGrid: NNA = morphLeft(rotatedClockWiseGrid);
     return rotateGridAnticlockwise(shiftedGrid);
 }
