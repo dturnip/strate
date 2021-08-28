@@ -41,4 +41,16 @@
   background-color: #A6A3FE;
 }
 
+.type512 {
+  background-color: #FEEBA3;
+}
+
+.type1024 {
+  background-color: #483A2E;
+}
+
+.type2048 {
+  background-color: #241C17;
+}
+
 /*# sourceMappingURL=cell.css.map */
