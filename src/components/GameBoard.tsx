@@ -3,11 +3,12 @@ import '../styles/game/cell.css';
 import '../styles/game/board.css';
 import { GameCell } from "../types/interfaces";
 import { NNA } from "../types/aliases";
-import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
+// import { morphLeft, morphRight, morphUp, morphDown } from "../lib/GridLogic";
+import { morphRight, morphLeft } from "../lib/FixedGridLogic";
 
 const Cell: React.FC<GameCell> = ({n}) => {
     return (
-        <div className={`cell type-${n}`}>
+        <div className={`cell type${n}`}>
             {n > 0 ? n : ""}
         </div>
     );
@@ -43,13 +44,13 @@ export const GameBoard: React.FC = () => {
 	const handleKeyDown = (event: KeyboardEvent) => {
 		switch (event.key) {
 			case "ArrowUp":
-				updateCellMatrix(morphUp(cellMatrix));
+				// updateCellMatrix(morphUp(cellMatrix));
 				break;
 			case "ArrowRight":
 				updateCellMatrix(morphRight(cellMatrix));
 				break;
 			case "ArrowDown":
-				updateCellMatrix(morphDown(cellMatrix));
+				// updateCellMatrix(morphDown(cellMatrix));
 				break;
 			case "ArrowLeft":
 				updateCellMatrix(morphLeft(cellMatrix));
