@@ -3,6 +3,7 @@ import '../styles/game/cell.scss';
 import '../styles/game/board.scss';
 import { GameCell } from "../types/interfaces";
 import { NNA } from "../types/aliases";
+import { GameBoardProps } from "../types/interfaces";
 import { morphRight, morphLeft, morphUp, morphDown } from "../lib/GridLogic";
 
 const Cell: React.FC<GameCell> = ({n}) => {
@@ -24,21 +25,26 @@ const Cell: React.FC<GameCell> = ({n}) => {
 // 	return grid;
 // }
 
-const newRandShootMatrix = (): NNA => {
-	const shootArray: Array<number> = [0, 2, 4, 8, 16, 32];
-	let grid: NNA = [];
-	for (let r = 0; r < 8; r++) {
-		grid.push([]);
-		for (let c = 0; c < 8; c++) {
-			grid[r].push(shootArray[Math.floor(Math.random() * 7)])
-		}
-	}
-	return grid;
-}
+// const newRandShootMatrix = (): NNA => {
+// 	const shootArray: Array<number> = [0, 2, 4, 8, 16, 32];
+// 	let grid: NNA = [];
+// 	for (let r = 0; r < 8; r++) {
+// 		grid.push([]);
+// 		for (let c = 0; c < 8; c++) {
+// 			grid[r].push(shootArray[Math.floor(Math.random() * 7)])
+// 		}
+// 	}
+// 	return grid;
+// }
 
-export const GameBoard: React.FC = () => {
+export const GameBoard: React.FC<GameBoardProps> = ({ map }) => {
 	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newShootMatrix(2));
-	const [cellMatrix, updateCellMatrix] = useState<NNA>(newRandShootMatrix());
+	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newRandShootMatrix());
+	const [cellMatrix, updateCellMatrix] = useState<NNA>(map);
+
+	useEffect(() => {
+		updateCellMatrix(map);
+	}, [map]);
 
 	const handleKeyDown = (event: KeyboardEvent) => {
 		switch (event.key) {
