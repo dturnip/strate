@@ -15,7 +15,7 @@ export const Start: React.FC = () => {
                         <span
                             id={"start-bt"}
                             onClick={() => {
-                                history.push("/tutorial")
+                                history.push("/play")
                             }}>
                             Start!
                         </span>
