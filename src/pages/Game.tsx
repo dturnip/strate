@@ -13,6 +13,18 @@ const Tutorial = () => {
     };
 
     return (
+    <>
+        <div id={"master"}>
+            {/*<h1 style={{textAlign: 'center'}}>&nbsp;</h1>*/}
+            <div id={"game-wrapper"}>
+                <GameBoard map={getMap(level)}/>
+                <Side points={"0"} objective={"Get the 8 tile"} moves={"2"} />
+            </div>
+            {/*<GameBoard map={getMap(1)} />*/}
+            <button onClick={incrementLevel}>Increment Level!</button>
+        </div>
+    </>
+)
 }
 
 export default Tutorial;
