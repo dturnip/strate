@@ -21,6 +21,7 @@ export const Start: React.FC = () => {
                         </span>
                     )} />
                 </div>
+                <span style={{fontWeight: "bold"}}><u>NB: Only landscape mode is supported</u></span>
             </div>
         </>
     )
