@@ -1,0 +1,38 @@
+@import "../lib/colors";
+@import "../lib/mixins/mixins";
+
+#side-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    max-width: 360px;
+    background-color: $satrb;
+    border-radius: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px white;
+    margin-left: 20px;
+    justify-content: space-evenly;
+
+    > section {
+        //padding-bottom: 30px;
+
+        > .side-button {
+            width: 20vw;
+            max-width: 250px;
+            padding: 10px 5px 10px 5px;
+            //background-color: $vlight;
+            background-color: $huee;
+            text-align: center;
+            overflow-wrap: normal;
+            border-radius: 3%;
+            box-shadow: 0 2px 4px rgba(72, 58, 46, 0.5) inset, 0 1px white;
+            > #construct {
+                @include text($sblackg, 18px);
+                font-weight: bolder;
+            }
+            > #data {
+                @include text($sblackf, 25px);
+            }
+        }
+    }
+}
