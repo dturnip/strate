@@ -1,5 +1,14 @@
 @import "../lib/colors";
 
+#master {
+    background-color: $satrb;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #game-wrapper {
     //background-color: $vlight;
     background-color: $sblacke;
