@@ -3,6 +3,7 @@
 .board-wrapper {
     display: flex;
     justify-content: center;
+    margin-right: 20px;
 
     > .board {
         display: flex;
@@ -10,7 +11,7 @@
         flex-flow: row wrap;
         width: 64vw;
         max-width: 560px;
-        background-color: $satrb;
+        background-color: $maturebase;
         border-radius: 1%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px white;
     }
