@@ -9,3 +9,16 @@ export const get = (a: string) => (k: string): any => {
     }
 }
 
+export const set = (a: string) => (k: string) => (v: any): void => {
+    switch (a) {
+        case "local":
+            localStorage.setItem(k, v);
+            break
+        case "session":
+            sessionStorage.setItem(k, v);
+            break
+        default:
+            sessionStorage.setItem(k, v);
+    }
+}
+
