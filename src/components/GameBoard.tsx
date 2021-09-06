@@ -14,29 +14,6 @@ const Cell: React.FC<GameCell> = ({n}) => {
     );
 }
 
-// const newShootMatrix = (shootInit: number): NNA => {
-// 	let grid: NNA = [];
-// 	for (let r = 0; r < 8; r++) {
-// 		grid.push([]);
-// 		for (let c = 0; c < 8; c++) {
-// 			grid[r].push(shootInit);
-// 		}
-// 	}
-// 	return grid;
-// }
-
-// const newRandShootMatrix = (): NNA => {
-// 	const shootArray: Array<number> = [0, 2, 4, 8, 16, 32];
-// 	let grid: NNA = [];
-// 	for (let r = 0; r < 8; r++) {
-// 		grid.push([]);
-// 		for (let c = 0; c < 8; c++) {
-// 			grid[r].push(shootArray[Math.floor(Math.random() * 7)])
-// 		}
-// 	}
-// 	return grid;
-// }
-
 export const GameBoard: React.FC<GameBoardProps> = ({ map }) => {
 	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newShootMatrix(2));
 	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newRandShootMatrix());
