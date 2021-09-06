@@ -22,3 +22,7 @@ export const set = (a: string) => (k: string) => (v: any): void => {
     }
 }
 
+export const lGet: (k: string) => any = get("local");
+export const sGet: (k: string) => any = get("session");
+export const lSet: (k: string) => (v: any) => void = set("local");
+export const sSet: (k: string) => (v: any) => void = set("session");
