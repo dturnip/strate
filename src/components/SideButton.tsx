@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from "react";
-
-interface SideButtonProps {
-    construct: string;
-    data: string;
-}
+import {SideButtonProps} from "../types/interfaces";
 
 export const SideButton: React.FC<SideButtonProps> = ({ construct, data }) => {
     return (
