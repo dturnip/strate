@@ -1,12 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {SideButton} from "./SideButton";
 import "../styles/game/side.scss"
-
-interface SideProps {
-    points: string;
-    objective: string;
-    moves: string;
-}
+import {SideProps} from "../types/interfaces";
 
 export const Side: React.FC<SideProps> = ({points, objective, moves}) => {
     return (
