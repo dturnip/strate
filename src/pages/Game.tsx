@@ -20,6 +20,14 @@ const Tutorial = () => {
         console.log(level);
     };
 
+    window.addEventListener("keyup", (e) => {
+        if (points !== sGet("points")) {
+            setPoints(sGet("points") || 0)
+        }
+    })
+
+    window.onunload = () => sessionStorage.clear();
+
     return (
         <>
             <div id={"master"}>
