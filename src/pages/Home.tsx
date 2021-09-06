@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import {BgParticles} from "../components/BgParticles";
 import {Start} from "../components/Start";
+import {lGet, sGet, lSet, sSet} from "../lib/Storage";
 
 const Home = () => {
-    const set = (k: string) => (v: any) => localStorage.setItem(k, v);
-    const get = (k: string) => localStorage.getItem(k);
-
     useEffect(() => {
-        set("coffees")(0);
+        if (!lGet("coffee")) lSet("coffee")(0);
     }, []);
 
     return (
