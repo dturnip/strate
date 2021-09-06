@@ -15,3 +15,4 @@ export const getMap = (map: number): NNA => {
 	if (maps === null) return retErrMap();
 	return maps[map];
 }
+
