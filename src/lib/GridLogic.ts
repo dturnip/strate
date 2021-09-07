@@ -1,4 +1,4 @@
-import {NNA} from "../types/aliases";
+import {NNA, morph} from "../types/aliases";
 import {lGet, sGet, lSet, sSet} from "./Storage";
 
 /**
@@ -132,10 +132,10 @@ const morphs: (dir: string) => (matrix: NNA) => NNA = (dir) => (matrix) => {
     return ret;
 }
 
-export const morphRight = morphs("right");
-export const morphLeft = morphs("left");
-export const morphUp = morphs("up");
-export const morphDown = morphs("down");
+export const morphRight: morph = morphs("right");
+export const morphLeft: morph = morphs("left");
+export const morphUp: morph = morphs("up");
+export const morphDown: morph = morphs("down");
 
 // export const morphRight = (matrix: NNA): NNA => {
 //     const ret = compressRight(mergeX(compressRight(matrix)));
