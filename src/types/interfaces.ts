@@ -20,3 +20,9 @@ export interface SideButtonProps {
 	construct: string;
 	data: string;
 }
+
+export interface Meta {
+	objective: string;
+	moves: number;
+}
+
