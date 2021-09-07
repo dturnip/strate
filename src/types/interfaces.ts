@@ -26,3 +26,6 @@ export interface Meta {
 	moves: number;
 }
 
+export interface Metas {
+	[key: string]: Meta
+}
