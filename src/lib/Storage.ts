@@ -1,4 +1,4 @@
-export const get = (a: string) => (k: string): any => {
+const get = (a: string) => (k: string): any => {
     switch (a) {
         case "local":
             return localStorage.getItem(k);
@@ -9,7 +9,7 @@ export const get = (a: string) => (k: string): any => {
     }
 }
 
-export const set = (a: string) => (k: string) => (v: any): void => {
+const set = (a: string) => (k: string) => (v: any): void => {
     switch (a) {
         case "local":
             localStorage.setItem(k, v);
