@@ -26,9 +26,25 @@ const Tutorial = () => {
         setMoves(sGet("moves"));
     };
 
-    window.addEventListener("keyup", (e) => {
+    const handlePoints = (e: KeyboardEvent) => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
+        }
+        if (e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowLeft") {
+            if (moves > 0) {
+                setMoves(parseInt(sGet("moves")));
+            }
+            if (moves <= 0) {
+                alert("fail");
+            }
+        }
+        console.log(moves);
+    }
+
+    useEffect(() => {
+        document.addEventListener("keyup", handlePoints);
+        return () => {
+            document.removeEventListener("keyup", handlePoints);
         }
     })
 
