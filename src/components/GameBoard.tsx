@@ -24,20 +24,36 @@ export const GameBoard: React.FC<GameBoardProps> = ({ map }) => {
 	}, [map]);
 
 	const handleKeyDown = (event: KeyboardEvent) => {
-		switch (event.key) {
-			case "ArrowUp":
-				updateCellMatrix(morphUp(cellMatrix));
-				break;
-			case "ArrowRight":
-				updateCellMatrix(morphRight(cellMatrix));
-				break;
-			case "ArrowDown":
-				updateCellMatrix(morphDown(cellMatrix));
-				break;
-			case "ArrowLeft":
-				updateCellMatrix(morphLeft(cellMatrix));
-				break;
-		}
+		// switch (event.key) {
+		// 	case "ArrowUp":
+		// 		updateCellMatrix(morphUp(cellMatrix));
+		// 		break;
+		// 	case "ArrowRight":
+		// 		updateCellMatrix(morphRight(cellMatrix));
+		// 		break;
+		// 	case "ArrowDown":
+		// 		updateCellMatrix(morphDown(cellMatrix));
+		// 		break;
+		// 	case "ArrowLeft":
+		// 		updateCellMatrix(morphLeft(cellMatrix));
+		// 		break;
+		// }
+        setTimeout(() => {
+			switch (event.key) {
+				case "ArrowUp":
+					updateCellMatrix(morphUp(cellMatrix));
+					break;
+				case "ArrowRight":
+					updateCellMatrix(morphRight(cellMatrix));
+					break;
+				case "ArrowDown":
+					updateCellMatrix(morphDown(cellMatrix));
+					break;
+				case "ArrowLeft":
+					updateCellMatrix(morphLeft(cellMatrix));
+					break;
+			}
+		}, 0)
 	}
 
 	useEffect(() => {
