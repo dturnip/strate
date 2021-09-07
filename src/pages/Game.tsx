@@ -12,6 +12,7 @@ const Tutorial = () => {
     const [level, setLevel] = useState<number>(0);
     const [points, setPoints] = useState<number>(0);
     const [moves, setMoves] = useState<number>(0);
+    const [fail, setFail] = useState<boolean>(false);
 
     useEffect(() => {
         if (!sGet("moves")) sSet("moves")(2);
