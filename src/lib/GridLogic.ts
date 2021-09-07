@@ -108,17 +108,37 @@ const mergeY = (matrix: NNA): NNA => {
 // Handling movement is compress -> merge -> compress
 
 export const morphRight = (matrix: NNA): NNA => {
-    return compressRight(mergeX(compressRight(matrix)));
+    const ret = compressRight(mergeX(compressRight(matrix)));
+    if (ret.toString() !== matrix.toString()) {
+        sSet("moves")(parseInt(sGet("moves")) - 1);
+    }
+    console.log(ret.toString() === matrix.toString());
+    return ret;
 }
 
 export const morphLeft = (matrix: NNA): NNA => {
-    return compressLeft(mergeX(compressLeft(matrix)));
+    const ret = compressLeft(mergeX(compressLeft(matrix)));
+    if (ret.toString() !== matrix.toString()) {
+        sSet("moves")(parseInt(sGet("moves")) - 1);
+    }
+    console.log(ret.toString() === matrix.toString());
+    return ret;
 };
 
 export const morphUp = (matrix: NNA): NNA => {
-    return transposeToRows(compressUp(mergeY(compressUp(matrix))));
+    const ret = transposeToRows(compressUp(mergeY(compressUp(matrix))));
+    if (ret.toString() !== matrix.toString()) {
+        sSet("moves")(parseInt(sGet("moves")) - 1);
+    }
+    console.log(ret.toString() === matrix.toString());
+    return ret;
 }
 
 export const morphDown = (matrix: NNA): NNA => {
-    return transposeToRows(compressDown(mergeY(compressDown(matrix))));
+    const ret = transposeToRows(compressDown(mergeY(compressDown(matrix))));
+    if (ret.toString() !== matrix.toString()) {
+        sSet("moves")(parseInt(sGet("moves")) - 1);
+    }
+    console.log(ret.toString() === matrix.toString());
+    return ret;
 }
