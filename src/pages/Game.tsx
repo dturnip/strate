@@ -19,10 +19,11 @@ const Tutorial = () => {
     }, []);
 
     const incrementLevel = () => {
-        setLevel(prev => prev + 1);
+        setLevel(prevState => prevState + 1);
         sSet("points")(0);
         setPoints(0);
-        console.log(level);
+        sSet("moves")(getMeta(level + 1).moves);
+        setMoves(sGet("moves"));
     };
 
     window.addEventListener("keyup", (e) => {
