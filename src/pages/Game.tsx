@@ -40,7 +40,10 @@ const Tutorial = () => {
                 <h1 style={{textAlign: 'center'}}>Map[{level}]</h1>
                 <div id={"game-wrapper"}>
                     <GameBoard map={getMap(level)}/>
-                    <Side points={points.toString()} objective={"Get the 8 tile"} moves={"2"} />
+                    <Side points={points.toString()}
+                          objective={getMeta(level).objective}
+                          moves={moves.toString()}
+                    />
                 </div>
                 {/*<GameBoard map={getMap(1)} />*/}
                 <button onClick={incrementLevel}>Increment Level!</button>
