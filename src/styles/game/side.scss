@@ -25,7 +25,7 @@
             text-align: center;
             overflow-wrap: normal;
             border-radius: 3%;
-            box-shadow: 0 2px 4px rgba(72, 58, 46, 0.5) inset, 0 1px white;
+            box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5), 0 1px white;
             > #construct {
                 @include text($sblackg, 18px);
                 font-weight: bolder;
