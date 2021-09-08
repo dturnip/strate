@@ -21,3 +21,31 @@ const check: CheckFn = (moves, cond) => {
     }
 }
 
+export const objectiveCheck: StatusFn = (level, moves) => {
+    const currMatrix: string = sGet("currMatrix");
+    const currStatus: string = sGet("currStatus");
+    switch (currStatus) {
+        case Status.CLEAR:
+            return Status.CLEAR;
+        case Status.FAIL:
+            return Status.FAIL;
+        case Status.ERROR:
+            console.log("Oops there was an Error");
+            alert("ERROR");
+            return Status.ERROR;
+        case Status.ALIVE:
+            switch (level) {
+                case 0:
+                    // Objective: Get the 8 tile
+                    return check(moves, currMatrix.includes("8"));
+                default:
+                    console.log("Oops there was an Error");
+                    alert("Oops there was an Error");
+                    return Status.ERROR;
+            }
+        default:
+            console.log("Oops there was an Error");
+            alert("Oops there was an Error");
+            return Status.ERROR;
+    }
+}
