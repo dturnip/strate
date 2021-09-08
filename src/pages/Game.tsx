@@ -34,7 +34,7 @@ const Tutorial = () => {
         sSet("currStatus")(Status.ALIVE);
     };
 
-    const handlePoints = (e: KeyboardEvent) => {
+    const handlePoints: (e: KeyboardEvent) => void = (e) => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
         }
@@ -42,7 +42,13 @@ const Tutorial = () => {
             if (moves > 0) {
                 setMoves(parseInt(sGet("moves")));
             }
-            alert(moves - 1)
+            const status = objectiveCheck(parseInt(sGet("level")), moves - 1);
+            if (status === Status.CLEAR) {
+                setClear(true);
+            }
+            if (status === Status.FAIL) {
+                setFail(true);
+            }
         }
     }
 
