@@ -3,13 +3,13 @@ import {GameBoard} from "../components/GameBoard";
 import {Side} from "../components/Side";
 import {getMap} from "../lib/Maps";
 import {getMeta} from "../lib/Maps";
-import {NNA} from "../types/aliases";
+import {NNA, Status} from "../types/aliases";
 import "../styles/game/game.scss"
 import {morphDown, morphLeft, morphRight, morphUp} from "../lib/GridLogic";
 import {lGet, sGet, lSet, sSet} from "../lib/Storage";
+import {objectiveCheck} from "../lib/LevelCheck";
 
 const Tutorial = () => {
-    const [level, setLevel] = useState<number>(0);
     const [points, setPoints] = useState<number>(0);
     const [moves, setMoves] = useState<number>(0);
     const [fail, setFail] = useState<boolean>(false);
