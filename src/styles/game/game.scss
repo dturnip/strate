@@ -87,4 +87,13 @@
             }
         }
 
+        > #button-container {
+            display: flex;
+            flex-direction: row;
+            //background-color: $shoot;
+            width: 35vw;
+            max-width: 480px;
+            justify-content: center;
+            padding-bottom: 7.5%;
+
 }
