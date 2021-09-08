@@ -6,6 +6,7 @@ import {lGet, sGet, lSet, sSet} from "../lib/Storage";
 const Home = () => {
     useEffect(() => {
         if (!lGet("coffee")) lSet("coffee")(0);
+        if (!sGet("level")) sSet("level")(0);
     }, []);
 
     return (
