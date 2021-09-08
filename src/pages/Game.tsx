@@ -16,8 +16,11 @@ const Tutorial = () => {
     const [clear, setClear] = useState<boolean>(false);
 
     useEffect(() => {
+        if (!sGet("level")) sSet("level")(0);
         if (!sGet("moves")) sSet("moves")(2);
+        if (!sGet("retry")) sSet("retry")(false);
         setMoves(sGet("moves"));
+        sSet("currStatus")(Status.ALIVE);
     }, []);
 
     const incrementLevel = () => {
