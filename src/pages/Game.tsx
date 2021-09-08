@@ -94,9 +94,16 @@ const Tutorial = () => {
                 <div id={"game-wrapper"}>
                     {/*<GameBoard map={getMap(parseInt(sGet("level")))}/>*/}
                     <GameBoard map={parseInt(sGet("level"))} retry={sGet("retry") === "true"} />
-                    <Side points={points.toString()}
-                          objective={getMeta(parseInt(sGet("level"))).objective}
-                          moves={moves.toString()}
+                    <Side
+                        points={points
+                        .toString()
+                        .replace("0", "O")
+                    }
+                        objective={getMeta(parseInt(sGet("level"))).objective}
+                        moves={moves
+                              .toString()
+                              .replace("0", "O")
+                          }
                     />
                 </div>
                 {/*<GameBoard map={getMap(1)} />*/}
@@ -114,13 +121,16 @@ const Tutorial = () => {
                     }</span>
                     <div id={"stat"}>
                         <span id={"points-stat"}>
-                            Points: {points}
-                        </span>
+                            Points: {points
+                            .toString()
+                            .replace("0", "O")
+                        }</span>
                         <br />
                         <span id={"moves-stat"}>
                             Moves Used: {
                                 `${getMeta(parseInt(sGet("level"))).moves - 
                                 parseInt(sGet("moves"))}/${getMeta(sGet("level")).moves}`
+                                    .replace("0", "O")
                             }
                         </span>
                     </div>
