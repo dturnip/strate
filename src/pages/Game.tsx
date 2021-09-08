@@ -77,6 +77,47 @@ const Tutorial = () => {
                 {/*<GameBoard map={getMap(1)} />*/}
                 <button onClick={incrementLevel}>Increment Level!</button>
             </div>
+            {clear !== fail &&
+            <div id={"overlay"}>
+                <div id={"ui-container"}>
+                    <span id={"message"}>Level {(level + 1)
+                        .toString()
+                        .replace("0", "O")} {fail
+                        ? "Failed"
+                        : clear
+                            ? "Cleared"
+                            : "Oops there was an Error"
+                    }</span>
+                    <div id={"stat"}>
+                        <span id={"points-stat"}>
+                            Points: {points}
+                        </span>
+                        <br />
+                        <span id={"moves-stat"}>
+                            Moves Used: {
+                                `${getMeta(level).moves - parseInt(sGet("moves"))}/${getMeta(level).moves}`
+                            }
+                        </span>
+                    </div>
+                    {clear ?
+                        (<div id={"button-container"}>
+                            <div id={"retry-button"}>
+                                <span id={"retry-text"}>Retry</span>
+                            </div>
+                            <div id={"next-button"}>
+                                <span id={"next-text"}>Next</span>
+                            </div>
+                        </div>)
+                        :
+                        (<div id={"button-container"}>
+                                <div id={"retry-button"}>
+                                    <span id={"retry-text"}>Retry</span>
+                                </div>
+                        </div>)
+                    }
+                </div>
+            </div>
+            }
         </>
     )
 }
