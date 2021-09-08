@@ -5,6 +5,8 @@ import { GameCell } from "../types/interfaces";
 import { NNA } from "../types/aliases";
 import { GameBoardProps } from "../types/interfaces";
 import { morphRight, morphLeft, morphUp, morphDown } from "../lib/GridLogic";
+import {sSet} from "../lib/Storage";
+import {getMap} from "../lib/Maps";
 
 const Cell: React.FC<GameCell> = ({n}) => {
     return (
@@ -14,14 +16,25 @@ const Cell: React.FC<GameCell> = ({n}) => {
     );
 }
 
-export const GameBoard: React.FC<GameBoardProps> = ({ map }) => {
+export const GameBoard: React.FC<GameBoardProps> = ({ map, retry }) => {
 	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newShootMatrix(2));
 	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newRandShootMatrix());
-	const [cellMatrix, updateCellMatrix] = useState<NNA>(map);
+	const [cellMatrix, updateCellMatrix] = useState<NNA>(getMap(map));
 
 	useEffect(() => {
-		updateCellMatrix(map);
+		updateCellMatrix(getMap(map));
+		sSet("currMatrix")(getMap(map));
+		console.log(map)
 	}, [map]);
+
+	useEffect(() => {
+		if (retry) {
+			updateCellMatrix(getMap(map));
+			sSet("currMatrix")(getMap(map));
+			console.log(map)
+			sSet("retry")(false);
+		}
+	}, [map, retry])
 
 	const handleKeyDown = (event: KeyboardEvent) => {
 		// switch (event.key) {
