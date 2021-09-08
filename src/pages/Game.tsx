@@ -13,6 +13,7 @@ const Tutorial = () => {
     const [points, setPoints] = useState<number>(0);
     const [moves, setMoves] = useState<number>(0);
     const [fail, setFail] = useState<boolean>(false);
+    const [clear, setClear] = useState<boolean>(false);
 
     useEffect(() => {
         if (!sGet("moves")) sSet("moves")(2);
@@ -25,6 +26,8 @@ const Tutorial = () => {
         setPoints(0);
         sSet("moves")(getMeta(level + 1).moves);
         setMoves(sGet("moves"));
+        setFail(false);
+        setClear(false);
     };
 
     const handlePoints = (e: KeyboardEvent) => {
@@ -35,11 +38,8 @@ const Tutorial = () => {
             if (moves > 0) {
                 setMoves(parseInt(sGet("moves")));
             }
-            if (moves <= 0) {
-                alert("fail");
-            }
+            alert(moves - 1)
         }
-        console.log(moves);
     }
 
     useEffect(() => {
@@ -48,6 +48,18 @@ const Tutorial = () => {
             document.removeEventListener("keyup", handlePoints);
         }
     })
+
+    useEffect(() => {
+        const uc = document.getElementById("ui-container");
+        if (uc !== null) {
+            if (clear) {
+                uc.style.boxShadow = "1px 1px 200px 1px #A3FECA";
+            }
+            if (fail) {
+                uc.style.boxShadow = "1px 1px 200px 1px #FEAAA3";
+            }
+        }
+    }, [clear, fail]);
 
     window.onunload = () => sessionStorage.clear();
 
