@@ -25,6 +25,7 @@ export interface SideButtonProps {
 export interface Meta {
 	objective: string;
 	moves: number;
+	cheat: string;
 }
 
 export interface Metas {

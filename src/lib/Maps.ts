@@ -21,8 +21,8 @@ export const getMap = (map: number): NNA => {
 	return maps[map];
 }
 
-export const getMeta: ((map: number) => Meta) = (map) => {
+export const getMeta: (map: number) => Meta = (map) => {
     const meta = getAllMeta();
-    if (meta === null) return { objective: "Error", moves: 0 };
+    if (meta === null) return { objective: "Error", moves: 0, cheat: "Error" };
     return meta[map];
 }
