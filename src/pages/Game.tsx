@@ -23,14 +23,15 @@ const Tutorial = () => {
         sSet("currStatus")(Status.ALIVE);
     }, []);
 
-    const incrementLevel = () => {
-        setLevel(prevState => prevState + 1);
+    const incrementLevel: () => void = () => {
+        sSet("level")(parseInt(sGet("level")) + 1)
         sSet("points")(0);
         setPoints(0);
-        sSet("moves")(getMeta(level + 1).moves);
+        sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
         setMoves(sGet("moves"));
         setFail(false);
         setClear(false);
+        sSet("currStatus")(Status.ALIVE);
     };
 
     const handlePoints = (e: KeyboardEvent) => {
