@@ -7,7 +7,8 @@ export interface Maps {
 }
 
 export interface GameBoardProps {
-	map: Array<Array<number>>;
+	map: number;
+	retry: boolean;
 }
 
 export interface SideProps {
