@@ -38,6 +38,9 @@ export const objectiveCheck: StatusFn = (level, moves) => {
                 case 0:
                     // Objective: Get the 8 tile
                     return check(moves, currMatrix.includes("8"));
+                case 1:
+                    // Objective: Get the 16 tile
+                    return check(moves, currMatrix.includes("16"));
                 default:
                     console.log("Oops there was an Error");
                     alert("Oops there was an Error");
