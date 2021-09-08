@@ -79,21 +79,21 @@ const Tutorial = () => {
     return (
         <>
             <div id={"master"}>
-                <h1 style={{textAlign: 'center'}}>Map[{level}]</h1>
+                <h1 style={{textAlign: 'center'}}>Map[{sGet("level")}]</h1>
                 <div id={"game-wrapper"}>
-                    <GameBoard map={getMap(level)}/>
+                    {/*<GameBoard map={getMap(parseInt(sGet("level")))}/>*/}
+                    <GameBoard map={parseInt(sGet("level"))} retry={sGet("retry") === "true"} />
                     <Side points={points.toString()}
-                          objective={getMeta(level).objective}
+                          objective={getMeta(parseInt(sGet("level"))).objective}
                           moves={moves.toString()}
                     />
                 </div>
                 {/*<GameBoard map={getMap(1)} />*/}
-                <button onClick={incrementLevel}>Increment Level!</button>
             </div>
             {clear !== fail &&
             <div id={"overlay"}>
                 <div id={"ui-container"}>
-                    <span id={"message"}>Level {(level + 1)
+                    <span id={"message"}>Level {(parseInt(sGet("level")) + 1)
                         .toString()
                         .replace("0", "O")} {fail
                         ? "Failed"
@@ -108,22 +108,23 @@ const Tutorial = () => {
                         <br />
                         <span id={"moves-stat"}>
                             Moves Used: {
-                                `${getMeta(level).moves - parseInt(sGet("moves"))}/${getMeta(level).moves}`
+                                `${getMeta(parseInt(sGet("level"))).moves - 
+                                parseInt(sGet("moves"))}/${getMeta(sGet("level")).moves}`
                             }
                         </span>
                     </div>
                     {clear ?
                         (<div id={"button-container"}>
-                            <div id={"retry-button"}>
+                            <div id={"retry-button"} onClick={retryLevel}>
                                 <span id={"retry-text"}>Retry</span>
                             </div>
-                            <div id={"next-button"}>
+                            <div id={"next-button"} onClick={incrementLevel}>
                                 <span id={"next-text"}>Next</span>
                             </div>
                         </div>)
                         :
                         (<div id={"button-container"}>
-                                <div id={"retry-button"}>
+                                <div id={"retry-button"} onClick={retryLevel}>
                                     <span id={"retry-text"}>Retry</span>
                                 </div>
                         </div>)
