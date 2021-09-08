@@ -1,14 +1,22 @@
 {
   "0": {
     "objective": "Get the 8 tile",
-    "moves": 2
+    "moves": 2,
+    "cheat": "Left, Up"
   },
   "1": {
     "objective": "Get the 16 tile",
-    "moves": 3
+    "moves": 3,
+    "cheat": "Left, Down, Down"
   },
   "2": {
     "objective": "Merge all tiles",
-    "moves": 4
+    "moves": 4,
+    "cheat": "Right, Down, Left, Up"
+  },
+  "3": {
+    "objective": "Get the 64 tile",
+    "moves": 6,
+    "cheat": "Down, Right, Up, Right, Up"
   }
 }
