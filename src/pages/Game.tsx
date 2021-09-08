@@ -71,7 +71,10 @@ const Tutorial = () => {
         }
     }, [clear, fail]);
 
-    window.onunload = () => sessionStorage.clear();
+    window.onunload = () => {
+        sessionStorage.clear();
+        sSet("level")(0);
+    }
 
     return (
         <>
