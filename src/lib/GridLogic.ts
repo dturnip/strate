@@ -129,6 +129,7 @@ const morphs: (dir: string) => (matrix: NNA) => NNA = (dir) => (matrix) => {
     if (ret.toString() !== matrix.toString()) {
         sSet("moves")(parseInt(sGet("moves")) - 1);
     }
+    sSet("currMatrix")(ret);
     return ret;
 }
 
