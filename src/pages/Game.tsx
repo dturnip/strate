@@ -34,6 +34,17 @@ const Tutorial = () => {
         sSet("currStatus")(Status.ALIVE);
     };
 
+    const retryLevel: () => void = () => {
+        sSet("points")(0);
+        setPoints(0);
+        sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
+        setMoves(sGet("moves"))
+        sSet("currStatus")(Status.ALIVE);
+        sSet("retry")(true);
+        setFail(false);
+        setClear(false);
+    }
+
     const handlePoints: (e: KeyboardEvent) => void = (e) => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
