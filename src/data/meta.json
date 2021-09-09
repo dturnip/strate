@@ -42,7 +42,7 @@
   "8": {
     "objective": "Get the 64 tile",
     "moves": 7,
-    "cheat": "Left, Down, Right, Up, Left, Down, Left"
+    "cheat": "Left, Up, Right, Down, Left, Up"
   },
   "9": {
     "objective": "Merge all tiles",
