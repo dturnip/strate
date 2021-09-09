@@ -43,6 +43,20 @@ const Tutorial = () => {
         sSet("retry")(true);
         setFail(false);
         setClear(false);
+    const fadeIn: () => void = () => {
+        const overlay: HTMLElement | null = document.getElementById("overlay");
+        if (!overlay) alert("Oops there was an Error");
+        if (overlay && overlay.style.opacity < String(1)) {
+            let opacity: number = 0;
+            let fadeFx = setInterval(() => {
+                if (opacity < 1) {
+                    opacity += 0.01;
+                    overlay.style.opacity = String(opacity);
+                } else {
+                    clearInterval(fadeFx);
+                }
+            }, 4);
+        }
     }
 
     const handlePoints: (e: KeyboardEvent) => void = (e) => {
