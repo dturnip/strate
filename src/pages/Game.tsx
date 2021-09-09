@@ -80,15 +80,18 @@ const Tutorial = () => {
             setPoints(sGet("points") || 0)
         }
         if (e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowLeft") {
+            const overlay: HTMLElement | null = document.getElementById("overlay");
             if (moves > 0) {
                 setMoves(parseInt(sGet("moves")));
             }
             const status = objectiveCheck(parseInt(sGet("level")), moves - 1);
             if (status === Status.CLEAR) {
                 setClear(true);
+                fadeIn();
             }
             if (status === Status.FAIL) {
                 setFail(true);
+                fadeIn();
             }
         }
     }
