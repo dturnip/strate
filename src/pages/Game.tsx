@@ -59,6 +59,22 @@ const Tutorial = () => {
         }
     }
 
+    const fadeOut: () => void = () => {
+        const overlay: HTMLElement | null = document.getElementById("overlay");
+        if (overlay && overlay.style.opacity > String(0)) {
+            let opacity: number = 1;
+            let fadeOutFx = setInterval(() => {
+                if (opacity > 0) {
+                    console.log(overlay.style.opacity);
+                    opacity -= 0.01;
+                    overlay.style.opacity = String(opacity);
+                } else {
+                    clearInterval(fadeOutFx);
+                }
+            }, 4);
+        }
+    }
+
     const handlePoints: (e: KeyboardEvent) => void = (e) => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
