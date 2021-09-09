@@ -6,6 +6,7 @@ import {Status} from "../types/aliases";
 import "../styles/game/game.scss"
 import {sGet, sSet} from "../lib/Storage";
 import {objectiveCheck} from "../lib/LevelCheck";
+import {AiFillQuestionCircle} from "react-icons/ai";
 
 const Tutorial = () => {
     const [points, setPoints] = useState<number>(0);
@@ -145,9 +146,6 @@ const Tutorial = () => {
     return (
         <>
             <div id={"master"}>
-                <div id={"header-wrapper"}>
-                    <h1 style={{textAlign: 'center'}}>Level&nbsp;{parseInt(sGet("level")) + 1}</h1>
-                </div>
                 <div id={"game-wrapper"}>
                     <GameBoard map={parseInt(sGet("level"))} retry={sGet("retry") === "true"} />
                     <Side
@@ -161,6 +159,16 @@ const Tutorial = () => {
                               .replace("0", "O")
                           }
                     />
+                </div>
+                <div id={"footer-wrapper"}>
+                    <span id={"level-text"}>Level&nbsp;{String(parseInt(sGet("level")) + 1)
+                        .replace("0", "O")
+                    }</span>
+                    <div id={"help-wrapper"}>
+                        <AiFillQuestionCircle id={"question-circle"} style={{
+                            "fontSize": "2.85rem"
+                        }} />
+                    </div>
                 </div>
             </div>
             {clear !== fail &&
