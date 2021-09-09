@@ -1,4 +1,4 @@
-import {NNA, morph} from "../types/aliases";
+import {NNA, morph, Status} from "../types/aliases";
 import {lGet, sGet, lSet, sSet} from "./Storage";
 
 /**
@@ -87,9 +87,11 @@ const mergeX = (matrix: NNA): NNA => {
             if (matrix[r][c] === matrix[r][c + 1]) {
                 matrix[r][c] = matrix[r][c] + matrix[r][c + 1];
                 matrix[r][c + 1] = 0;
-                sSet("points")(
-                    parseInt(sGet("points") || 0, 10) + matrix[r][c]
-                );
+                if (sGet("currStatus") === Status.ALIVE) {
+                    sSet("points")(
+                        parseInt(sGet("points") || 0, 10) + matrix[r][c]
+                    );
+                }
             }
         }
     }
@@ -127,7 +129,9 @@ const morphs: (dir: string) => (matrix: NNA) => NNA = (dir) => (matrix) => {
             return [...Array(8)].map(_ => Array(8).fill(2));
     }
     if (ret.toString() !== matrix.toString()) {
-        sSet("moves")(parseInt(sGet("moves")) - 1);
+        if (sGet("currStatus") === Status.ALIVE) {
+            sSet("moves")(parseInt(sGet("moves")) - 1);
+        }
     }
     sSet("currMatrix")(ret);
     return ret;
