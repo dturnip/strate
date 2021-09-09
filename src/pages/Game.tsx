@@ -86,25 +86,27 @@ const Tutorial = () => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
         }
-        if (e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowLeft") {
-            if (moves > 0) {
-                setMoves(parseInt(sGet("moves")));
-            }
-            if (Number(sGet("moves")) < 0) {
-                sSet("moves")(0);
-                sSet("currStatus")(Status.FAIL);
-                setFail(true);
-                alert("Anticheat detected you tried to exceed the move limit! Please slow down your key presses");
-                fadeIn();
-            }
-            const status = objectiveCheck(parseInt(sGet("level")), parseInt(sGet("moves")));
-            if (status === Status.CLEAR) {
-                setClear(true);
-                fadeIn();
-            }
-            if (status === Status.FAIL) {
-                setFail(true);
-                fadeIn();
+        if (sGet("currStatus") === Status.ALIVE) {
+            if (e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowLeft") {
+                if (moves > 0) {
+                    setMoves(parseInt(sGet("moves")));
+                }
+                if (Number(sGet("moves")) < 0) {
+                    sSet("moves")(0);
+                    sSet("currStatus")(Status.FAIL);
+                    setFail(true);
+                    alert("Anticheat detected you tried to exceed the move limit! Please slow down your key presses");
+                    fadeIn();
+                }
+                const status = objectiveCheck(parseInt(sGet("level")), parseInt(sGet("moves")));
+                if (status === Status.CLEAR) {
+                    setClear(true);
+                    fadeIn();
+                }
+                if (status === Status.FAIL) {
+                    setFail(true);
+                    fadeIn();
+                }
             }
         }
     }
