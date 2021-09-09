@@ -32,7 +32,7 @@
 }
 
 .type64 {
-	background-color: $charmbase;
+	background-color: $hue;
 }
 
 .type128 {
@@ -43,11 +43,13 @@
 	background-color: $charmbcnt;
 }
 .type512 {
-	background-color: $hue;
+	background-color: $satrg;
 }
 .type1024 {
-	background-color: $sblackc;
+	background-color: $sblacke;
+	color: $powerbase;
 }
 .type2048 {
-	background-color: $sblackd;
+	background-color: $sblackg;
+	color: $powerbase;
 }
