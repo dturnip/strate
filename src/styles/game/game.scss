@@ -1,6 +1,10 @@
 @import "../lib/colors";
 @import "../lib/mixins/mixins";
 
+body {
+    background-color: $satrb;
+}
+
 #master {
     background-color: $satrb;
     height: 100vh;
@@ -20,6 +24,38 @@
         justify-content: center;
         border-radius: 1%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px white;
+    }
+
+    > #footer-wrapper {
+        //background: $shoot;
+        width: 95vw;
+        max-width: 1100px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+
+        > #level-text {
+            background-color: $wtint;
+            padding: 5px 10px;
+            border-radius: 5%;
+            box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5);
+            @include text($sblackg, 1.75rem);
+        }
+
+        > #help-wrapper {
+          flex: 0.5;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            #question-circle {
+                color: #C97BE9;
+                background-color: $wtint;
+                margin-left: 10px;
+                border-radius: 5%;
+                box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5);
+            }
+        }
     }
 }
 
