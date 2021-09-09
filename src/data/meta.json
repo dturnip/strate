@@ -18,5 +18,25 @@
     "objective": "Get the 64 tile",
     "moves": 6,
     "cheat": "Down, Right, Up, Right, Up"
+  },
+  "4": {
+    "objective": "Merge all tiles",
+    "moves": 7,
+    "cheat": "Left, Down, Down, Left, Left, Up"
+  },
+  "5": {
+    "objective": "Remove all 2 tiles",
+    "moves": 5,
+    "cheat": "Right, Down, Up, Left"
+  },
+  "6": {
+    "objective": "Get the 64 tile",
+    "moves": 7,
+    "cheat": "Right, Up, Left, Down, Left"
+  },
+  "7": {
+    "objective": "Remove all tiles under 8",
+    "moves": 3,
+    "cheat": "Up, Left, Up"
   }
 }

@@ -45,7 +45,19 @@ export const objectiveCheck: StatusFn = (level, moves) => {
                     // Objective: Merge all tiles (16)
                     return check(moves, currMatrix.includes("16"));
                 case 3:
+                    // Objective: Get the 64 tile
                     return check(moves, currMatrix.includes("64"));
+                case 4:
+                    // Objective: Merge all tiles (32)
+                    return check(moves, currMatrix.includes("32"));
+                case 5:
+                    // Objective: Remove all 2 tiles
+                    return check(moves, !currMatrix.includes("2"));
+                case 6:
+                    // Objective: Get the 64 tile
+                    return check(moves, currMatrix.includes("64"));
+                case 7:
+                    return check(moves, !currMatrix.includes("2") && !currMatrix.includes("4"));
                 default:
                     console.log("Oops there was an Error");
                     alert("Oops there was an Error");
