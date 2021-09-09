@@ -17,8 +17,6 @@ const Cell: React.FC<GameCell> = ({n}) => {
 }
 
 export const GameBoard: React.FC<GameBoardProps> = ({ map, retry }) => {
-	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newShootMatrix(2));
-	// const [cellMatrix, updateCellMatrix] = useState<NNA>(newRandShootMatrix());
 	const [cellMatrix, updateCellMatrix] = useState<NNA>(getMap(map));
 
 	useEffect(() => {
@@ -37,20 +35,6 @@ export const GameBoard: React.FC<GameBoardProps> = ({ map, retry }) => {
 	}, [map, retry])
 
 	const handleKeyDown = (event: KeyboardEvent) => {
-		// switch (event.key) {
-		// 	case "ArrowUp":
-		// 		updateCellMatrix(morphUp(cellMatrix));
-		// 		break;
-		// 	case "ArrowRight":
-		// 		updateCellMatrix(morphRight(cellMatrix));
-		// 		break;
-		// 	case "ArrowDown":
-		// 		updateCellMatrix(morphDown(cellMatrix));
-		// 		break;
-		// 	case "ArrowLeft":
-		// 		updateCellMatrix(morphLeft(cellMatrix));
-		// 		break;
-		// }
         setTimeout(() => {
 			switch (event.key) {
 				case "ArrowUp":

@@ -1,5 +1,5 @@
 import {NNA, morph, Status} from "../types/aliases";
-import {lGet, sGet, lSet, sSet} from "./Storage";
+import {sGet, sSet} from "./Storage";
 
 /**
  * Returns a matrix with its columns as rows
@@ -141,39 +141,3 @@ export const morphRight: morph = morphs("right");
 export const morphLeft: morph = morphs("left");
 export const morphUp: morph = morphs("up");
 export const morphDown: morph = morphs("down");
-
-// export const morphRight = (matrix: NNA): NNA => {
-//     const ret = compressRight(mergeX(compressRight(matrix)));
-//     if (ret.toString() !== matrix.toString()) {
-//         sSet("moves")(parseInt(sGet("moves")) - 1);
-//     }
-//     console.log(ret.toString() === matrix.toString());
-//     return ret;
-// }
-//
-// export const morphLeft = (matrix: NNA): NNA => {
-//     const ret = compressLeft(mergeX(compressLeft(matrix)));
-//     if (ret.toString() !== matrix.toString()) {
-//         sSet("moves")(parseInt(sGet("moves")) - 1);
-//     }
-//     console.log(ret.toString() === matrix.toString());
-//     return ret;
-// };
-//
-// export const morphUp = (matrix: NNA): NNA => {
-//     const ret = transposeToRows(compressUp(mergeY(compressUp(matrix))));
-//     if (ret.toString() !== matrix.toString()) {
-//         sSet("moves")(parseInt(sGet("moves")) - 1);
-//     }
-//     console.log(ret.toString() === matrix.toString());
-//     return ret;
-// }
-//
-// export const morphDown = (matrix: NNA): NNA => {
-//     const ret = transposeToRows(compressDown(mergeY(compressDown(matrix))));
-//     if (ret.toString() !== matrix.toString()) {
-//         sSet("moves")(parseInt(sGet("moves")) - 1);
-//     }
-//     console.log(ret.toString() === matrix.toString());
-//     return ret;
-// }

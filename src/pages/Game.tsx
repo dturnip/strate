@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {GameBoard} from "../components/GameBoard";
 import {Side} from "../components/Side";
-import {getMap} from "../lib/Maps";
 import {getMeta} from "../lib/Maps";
-import {NNA, Status} from "../types/aliases";
+import {Status} from "../types/aliases";
 import "../styles/game/game.scss"
-import {morphDown, morphLeft, morphRight, morphUp} from "../lib/GridLogic";
-import {lGet, sGet, lSet, sSet} from "../lib/Storage";
+import {sGet, sSet} from "../lib/Storage";
 import {objectiveCheck} from "../lib/LevelCheck";
 
 const Tutorial = () => {
@@ -142,7 +140,6 @@ const Tutorial = () => {
                     <h1 style={{textAlign: 'center'}}>Level&nbsp;{parseInt(sGet("level")) + 1}</h1>
                 </div>
                 <div id={"game-wrapper"}>
-                    {/*<GameBoard map={getMap(parseInt(sGet("level")))}/>*/}
                     <GameBoard map={parseInt(sGet("level"))} retry={sGet("retry") === "true"} />
                     <Side
                         points={points
@@ -156,7 +153,6 @@ const Tutorial = () => {
                           }
                     />
                 </div>
-                {/*<GameBoard map={getMap(1)} />*/}
             </div>
             {clear !== fail &&
             <div id={"overlay"}>

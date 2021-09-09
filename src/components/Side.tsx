@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {SideButton} from "./SideButton";
 import "../styles/game/side.scss"
 import {SideProps} from "../types/interfaces";

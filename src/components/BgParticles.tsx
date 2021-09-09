@@ -2,9 +2,6 @@ import React from 'react';
 import Particles from "react-tsparticles";
 
 export const BgParticles = () => {
-    // @ts-ignore
-    // @ts-ignore
-    // @ts-ignore
     return (
         <>
             <Particles
