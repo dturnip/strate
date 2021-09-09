@@ -54,7 +54,6 @@ const Tutorial = () => {
 
     const fadeIn: () => void = () => {
         const overlay: HTMLElement | null = document.getElementById("overlay");
-        if (!overlay) alert("Oops there was an Error");
         if (overlay && overlay.style.opacity < String(1)) {
             let opacity: number = 0;
             let fadeFx = setInterval(() => {
@@ -74,7 +73,6 @@ const Tutorial = () => {
             let opacity: number = 1;
             let fadeOutFx = setInterval(() => {
                 if (opacity > 0) {
-                    console.log(overlay.style.opacity);
                     opacity -= 0.01;
                     overlay.style.opacity = String(opacity);
                 } else {
@@ -91,6 +89,13 @@ const Tutorial = () => {
         if (e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowLeft") {
             if (moves > 0) {
                 setMoves(parseInt(sGet("moves")));
+            }
+            if (Number(sGet("moves")) < 0) {
+                sSet("moves")(0);
+                sSet("currStatus")(Status.FAIL);
+                setFail(true);
+                alert("Anticheat detected you tried to exceed the move limit! Please slow down your key presses");
+                fadeIn();
             }
             const status = objectiveCheck(parseInt(sGet("level")), parseInt(sGet("moves")));
             if (status === Status.CLEAR) {
@@ -201,8 +206,3 @@ const Tutorial = () => {
 }
 
 export default Tutorial;
-
-/*
- * getMap(0) -> maxMoves = 2
- * getMap(1) -> maxMoves = 3
- */
