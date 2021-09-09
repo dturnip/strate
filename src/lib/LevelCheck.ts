@@ -57,7 +57,17 @@ export const objectiveCheck: StatusFn = (level, moves) => {
                     // Objective: Get the 64 tile
                     return check(moves, currMatrix.includes("64"));
                 case 7:
+                    // Objective: Remove all tiles under 8
                     return check(moves, !currMatrix.includes("2") && !currMatrix.includes("4"));
+                case 8:
+                    // Objective: Get the 64 tile
+                    return check(moves, currMatrix.includes("64"));
+                case 9:
+                    // Objective: Merge all tiles (128)
+                    return check(moves, currMatrix.includes("128"));
+                case 10:
+                    // Objective: Get over 300 points
+                    return check(moves, parseInt(sGet("points"), 10) > 300);
                 default:
                     console.log("Oops there was an Error");
                     alert("Oops there was an Error");
