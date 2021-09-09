@@ -92,7 +92,7 @@ const Tutorial = () => {
             if (moves > 0) {
                 setMoves(parseInt(sGet("moves")));
             }
-            const status = objectiveCheck(parseInt(sGet("level")), moves - 1);
+            const status = objectiveCheck(parseInt(sGet("level")), parseInt(sGet("moves")));
             if (status === Status.CLEAR) {
                 setClear(true);
                 fadeIn();
@@ -131,7 +131,9 @@ const Tutorial = () => {
     return (
         <>
             <div id={"master"}>
-                <h1 style={{textAlign: 'center'}}>Map[{sGet("level")}]</h1>
+                <div id={"header-wrapper"}>
+                    <h1 style={{textAlign: 'center'}}>Level&nbsp;{parseInt(sGet("level")) + 1}</h1>
+                </div>
                 <div id={"game-wrapper"}>
                     {/*<GameBoard map={getMap(parseInt(sGet("level")))}/>*/}
                     <GameBoard map={parseInt(sGet("level"))} retry={sGet("retry") === "true"} />
