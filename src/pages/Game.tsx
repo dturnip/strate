@@ -24,7 +24,8 @@ const Tutorial = () => {
     }, []);
 
     const incrementLevel: () => void = () => {
-        sSet("level")(parseInt(sGet("level")) + 1)
+        fadeOut();
+        sSet("level")(parseInt(sGet("level")) + 1);
         sSet("points")(0);
         setPoints(0);
         sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
@@ -35,6 +36,7 @@ const Tutorial = () => {
     };
 
     const retryLevel: () => void = () => {
+        fadeOut();
         sSet("points")(0);
         setPoints(0);
         sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
