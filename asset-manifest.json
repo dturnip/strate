@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/strate/static/css/main.f6e95492.chunk.css",
-    "main.js": "/strate/static/js/main.bb6cee75.chunk.js",
-    "main.js.map": "/strate/static/js/main.bb6cee75.chunk.js.map",
+    "main.css": "/strate/static/css/main.33b7a5b2.chunk.css",
+    "main.js": "/strate/static/js/main.aeb9b916.chunk.js",
+    "main.js.map": "/strate/static/js/main.aeb9b916.chunk.js.map",
     "runtime-main.js": "/strate/static/js/runtime-main.860baec9.js",
     "runtime-main.js.map": "/strate/static/js/runtime-main.860baec9.js.map",
     "static/js/2.061f2477.chunk.js": "/strate/static/js/2.061f2477.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.1d7b9406.chunk.js": "/strate/static/js/3.1d7b9406.chunk.js",
     "static/js/3.1d7b9406.chunk.js.map": "/strate/static/js/3.1d7b9406.chunk.js.map",
     "index.html": "/strate/index.html",
-    "static/css/main.f6e95492.chunk.css.map": "/strate/static/css/main.f6e95492.chunk.css.map",
+    "static/css/main.33b7a5b2.chunk.css.map": "/strate/static/css/main.33b7a5b2.chunk.css.map",
     "static/js/2.061f2477.chunk.js.LICENSE.txt": "/strate/static/js/2.061f2477.chunk.js.LICENSE.txt",
     "static/media/coffee-bk.0626c06f.png": "/strate/static/media/coffee-bk.0626c06f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.860baec9.js",
     "static/js/2.061f2477.chunk.js",
-    "static/css/main.f6e95492.chunk.css",
-    "static/js/main.bb6cee75.chunk.js"
+    "static/css/main.33b7a5b2.chunk.css",
+    "static/js/main.aeb9b916.chunk.js"
   ]
 }
