@@ -12,6 +12,7 @@ const Tutorial = () => {
     const [moves, setMoves] = useState<number>(0);
     const [fail, setFail] = useState<boolean>(false);
     const [clear, setClear] = useState<boolean>(false);
+    const [clickable, setClickable] = useState<boolean>(true);
 
     useEffect(() => {
         if (!sGet("level")) sSet("level")(0);
@@ -22,31 +23,39 @@ const Tutorial = () => {
     }, []);
 
     const incrementLevel: () => void = () => {
-        fadeOut();
-        sSet("level")(parseInt(sGet("level")) + 1);
-        sSet("points")(0);
-        setPoints(0);
-        sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
-        setMoves(sGet("moves"));
-        sSet("currStatus")(Status.ALIVE);
-        setTimeout(() => {
-            setFail(false);
-            setClear(false);
-        }, 400);
+        if (clickable) {
+            setClickable(false);
+            fadeOut();
+            sSet("level")(parseInt(sGet("level")) + 1);
+            sSet("points")(0);
+            setPoints(0);
+            sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
+            setMoves(sGet("moves"));
+            sSet("currStatus")(Status.ALIVE);
+            setTimeout(() => {
+                setFail(false);
+                setClear(false);
+                setClickable(true);
+            }, 400);
+        }
     };
 
     const retryLevel: () => void = () => {
-        fadeOut();
-        sSet("points")(0);
-        setPoints(0);
-        sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
-        setMoves(sGet("moves"))
-        sSet("currStatus")(Status.ALIVE);
-        sSet("retry")(true);
-        setTimeout(() => {
-            setFail(false);
-            setClear(false);
-        }, 500);
+        if (clickable) {
+            setClickable(false);
+            fadeOut();
+            sSet("points")(0);
+            setPoints(0);
+            sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
+            setMoves(sGet("moves"))
+            sSet("currStatus")(Status.ALIVE);
+            sSet("retry")(true);
+            setTimeout(() => {
+                setFail(false);
+                setClear(false);
+                setClickable(true);
+            }, 500);
+        }
     }
 
 
