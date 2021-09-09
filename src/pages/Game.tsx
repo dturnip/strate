@@ -48,7 +48,7 @@ const Tutorial = () => {
         setTimeout(() => {
             setFail(false);
             setClear(false);
-        }, 400);
+        }, 500);
     }
 
 
@@ -58,12 +58,12 @@ const Tutorial = () => {
             let opacity: number = 0;
             let fadeFx = setInterval(() => {
                 if (opacity < 1) {
-                    opacity += 0.01;
+                    opacity += 0.04;
                     overlay.style.opacity = String(opacity);
                 } else {
                     clearInterval(fadeFx);
                 }
-            }, 4);
+            }, 5);
         }
     }
 
@@ -73,12 +73,12 @@ const Tutorial = () => {
             let opacity: number = 1;
             let fadeOutFx = setInterval(() => {
                 if (opacity > 0) {
-                    opacity -= 0.01;
+                    opacity -= 0.04;
                     overlay.style.opacity = String(opacity);
                 } else {
                     clearInterval(fadeOutFx);
                 }
-            }, 4);
+            }, 5);
         }
     }
 
