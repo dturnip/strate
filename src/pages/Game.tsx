@@ -30,9 +30,11 @@ const Tutorial = () => {
         setPoints(0);
         sSet("moves")(getMeta(parseInt(sGet("level"))).moves);
         setMoves(sGet("moves"));
-        setFail(false);
-        setClear(false);
         sSet("currStatus")(Status.ALIVE);
+        setTimeout(() => {
+            setFail(false);
+            setClear(false);
+        }, 400);
     };
 
     const retryLevel: () => void = () => {
@@ -43,8 +45,13 @@ const Tutorial = () => {
         setMoves(sGet("moves"))
         sSet("currStatus")(Status.ALIVE);
         sSet("retry")(true);
-        setFail(false);
-        setClear(false);
+        setTimeout(() => {
+            setFail(false);
+            setClear(false);
+        }, 400);
+    }
+
+
     const fadeIn: () => void = () => {
         const overlay: HTMLElement | null = document.getElementById("overlay");
         if (!overlay) alert("Oops there was an Error");
