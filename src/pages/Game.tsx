@@ -89,7 +89,6 @@ const Tutorial = () => {
             setPoints(sGet("points") || 0)
         }
         if (e.key === "ArrowUp" || e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "ArrowLeft") {
-            const overlay: HTMLElement | null = document.getElementById("overlay");
             if (moves > 0) {
                 setMoves(parseInt(sGet("moves")));
             }
