@@ -7,6 +7,7 @@ import "../styles/game/game.scss"
 import {sGet, sSet} from "../lib/Storage";
 import {objectiveCheck} from "../lib/LevelCheck";
 import {AiFillQuestionCircle} from "react-icons/ai";
+import {VscDebugRestart} from "react-icons/vsc";
 
 const Tutorial = () => {
     const [points, setPoints] = useState<number>(0);
@@ -165,9 +166,18 @@ const Tutorial = () => {
                         .replace("0", "O")
                     }</span>
                     <div id={"help-wrapper"}>
+                        <VscDebugRestart id={"debug-retry"} style={{
+                            fontSize: "2.9rem"
+                        }} onClick={retryLevel}/>
                         <AiFillQuestionCircle id={"question-circle"} style={{
-                            "fontSize": "2.85rem"
+                            fontSize: "2.9rem"
                         }} />
+                        <span id={"solution"}>
+                            {getMeta(parseInt(sGet("level"))).cheat}
+                        </span>
+                        <div id={"solution-overlay"}>
+
+                        </div>
                     </div>
                 </div>
             </div>
