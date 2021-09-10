@@ -2,56 +2,56 @@
   "0": {
     "objective": "Get the 8 tile",
     "moves": 2,
-    "cheat": "Left, Up"
+    "cheat": "\u2190\u2191"
   },
   "1": {
     "objective": "Get the 16 tile",
     "moves": 3,
-    "cheat": "Left, Down, Down"
+    "cheat": "\u2190\u2193\u2193"
   },
   "2": {
     "objective": "Merge all tiles",
     "moves": 4,
-    "cheat": "Right, Down, Left, Up"
+    "cheat": "\u2192\u2193\u2190\u2191"
   },
   "3": {
     "objective": "Get the 64 tile",
     "moves": 6,
-    "cheat": "Down, Right, Up, Right, Up"
+    "cheat": "\u2193\u2192\u2191\u2192\u2191"
   },
   "4": {
     "objective": "Merge all tiles",
     "moves": 7,
-    "cheat": "Left, Down, Down, Left, Left, Up"
+    "cheat": "\u2190\u2193\u2193\u2190\u2190\u2191"
   },
   "5": {
     "objective": "Remove all 2 tiles",
     "moves": 5,
-    "cheat": "Right, Down, Up, Left"
+    "cheat": "\u2192\u2193\u2191\u2190"
   },
   "6": {
     "objective": "Get the 64 tile",
     "moves": 7,
-    "cheat": "Right, Up, Left, Down, Left"
+    "cheat": "\u2192\u2191\u2190\u2193\u2190"
   },
   "7": {
     "objective": "Remove all tiles under 8",
     "moves": 3,
-    "cheat": "Up, Left, Up"
+    "cheat": "\u2191\u2190\u2191"
   },
   "8": {
     "objective": "Get the 64 tile",
     "moves": 7,
-    "cheat": "Left, Up, Right, Down, Left, Up"
+    "cheat": "\u2190\u2191\u2192\u2193\u2190\u2191"
   },
   "9": {
     "objective": "Merge all tiles",
     "moves": 5,
-    "cheat": "Left, Up, Left, Up, Down"
+    "cheat": "\u2190\u2191\u2190\u2191\u2193"
   },
   "10": {
     "objective": "Get over 300 points",
     "moves": 6,
-    "cheat": "Up, Left, Right, Up, Left"
+    "cheat": "\u2191\u2190\u2192\u2191\u2190"
   }
 }
