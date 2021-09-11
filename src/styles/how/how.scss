@@ -1,0 +1,78 @@
+@import "../lib/colors";
+@import "../lib/mixins/mixins";
+
+#center-flex {
+  //height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#master-flex-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 65vw;
+
+  > #back-bt-wrapper {
+    align-self: center;
+    margin-bottom: 5vh;
+
+    > #back-bt {
+      @include text($wtintd, 40px);
+      background: linear-gradient(to left, $vlight 50%, $sblack 50%) right;
+      background-size: 200%;
+      font-weight: bolder;
+      box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5), 0 1px white;
+      border-radius: 10px;
+      padding: 6px 40px;
+      transition: 0.5s ease-out;
+
+      &:hover {
+        background-position: left;
+        cursor: pointer;
+        @include text($sblacke, 40px);
+      }
+    }
+  }
+}
+
+.sect {
+  margin: 5vh 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 1000px;
+
+  > .img-wrap {
+    flex: 0.5;
+    > .img {
+      max-height: 1000px;
+      width: 100%;
+    }
+  }
+  > .text-wrap {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.head {
+  @include text($sblackg, 2rem);
+  font-weight: bolder;
+}
+
+.body {
+  margin: 15px 4vw;
+  font-family: Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+hr {
+  border: 0;
+  width: 100%;
+  background-color: $sblackg;
+  height: 1px;
+}

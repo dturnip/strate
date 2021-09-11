@@ -1,5 +1,6 @@
 import React from 'react';
 import {Route} from "react-router-dom";
+import "../styles/how/how.scss";
 
 const How = () => {
     return (
