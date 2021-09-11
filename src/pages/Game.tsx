@@ -94,6 +94,10 @@ const Tutorial = () => {
         if (elem) elem.style.transform = `translateX(${x}px)`;
     }
 
+    const setTransitionSpeed: (elem: HTMLElement | null, x: number) => void = (elem, x) => {
+        if (elem) elem.style.transition = `transform ${x}ms ease-in-out 25ms`;
+    }
+
     const handlePoints: (e: KeyboardEvent) => void = (e) => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
