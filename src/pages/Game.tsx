@@ -126,10 +126,12 @@ const Tutorial = () => {
                 }
                 const status = objectiveCheck(parseInt(sGet("level")), parseInt(sGet("moves")));
                 if (status === Status.CLEAR) {
+                    hide();
                     setClear(true);
                     fadeIn();
                 }
                 if (status === Status.FAIL) {
+                    hide();
                     setFail(true);
                     fadeIn();
                 }
@@ -185,16 +187,14 @@ const Tutorial = () => {
                     <div id={"help-wrapper"}>
                         <VscDebugRestart id={"debug-retry"} style={{
                             fontSize: "2.9rem"
-                        }} onClick={retryLevel}/>
+                        }} onClick={retryLevel} />
                         <AiFillQuestionCircle id={"question-circle"} style={{
                             fontSize: "2.9rem"
-                        }} />
+                        }} onClick={reveal} />
                         <span id={"solution"}>
                             {getMeta(parseInt(sGet("level"))).cheat}
                         </span>
-                        <div id={"solution-overlay"}>
-
-                        </div>
+                        <div id={"solution-overlay"} />
                     </div>
                 </div>
             </div>
