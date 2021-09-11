@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {GameBoard} from "../components/GameBoard";
 import {Side} from "../components/Side";
+import {Stars} from "../components/Stars";
 import {getMeta} from "../lib/Maps";
 import {Status} from "../types/aliases";
 import "../styles/game/game.scss"
@@ -223,6 +224,12 @@ const Tutorial = () => {
                                     .replace("0", "O")
                             }
                         </span>
+                        <Stars
+                            usedMoves={getMeta(parseInt(sGet("level"))).moves - parseInt(sGet("moves"))}
+                            maxMoves={getMeta(parseInt(sGet("level"))).moves}
+                            bestMoves={getMeta(parseInt(sGet("level"))).cheat.split("").length}
+                            clear={clear}
+                        />
                     </div>
                     {clear ?
                         (<div id={"button-container"}>
