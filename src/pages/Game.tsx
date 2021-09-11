@@ -98,6 +98,16 @@ const Tutorial = () => {
         if (elem) elem.style.transition = `transform ${x}ms ease-in-out 25ms`;
     }
 
+    const reveal: () => void = () => {
+        setTransitionSpeed(document.getElementById("solution-overlay"), 600);
+        translateX(document.getElementById("solution-overlay"), 400);
+    }
+
+    const hide: () => void = () => {
+        setTransitionSpeed(document.getElementById("solution-overlay"), 0);
+        translateX(document.getElementById("solution-overlay"), 0);
+    }
+
     const handlePoints: (e: KeyboardEvent) => void = (e) => {
         if (points !== sGet("points")) {
             setPoints(sGet("points") || 0)
