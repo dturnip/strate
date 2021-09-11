@@ -1,0 +1,19 @@
+@import "../lib/colors";
+@import "../lib/mixins/mixins";
+
+#stars-stat {
+  //background-color: $shoot;
+  font-weight: bolder;
+  margin: 10% 0;
+  text-align: center;
+
+  > .star {
+    margin: auto 5px;
+    height: 80px;
+    width: 80px;
+  }
+
+  > .gray {
+    filter: grayscale(100%);
+  }
+}
