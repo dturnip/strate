@@ -35,6 +35,16 @@ const How = () => {
                             <span id={"utils-body"} className={"body"}>When stuck on a level, pressing the question mark button will reveal the solution. The arrows revealed correspond to which arrow key to press.<br /><br />The retry button will reset the current level.</span>
                         </div>
                     </section>
+                    <hr />
+                    <section id={"stars-sect"} className={"sect"}>
+                        <div id={"stars-text-wrapper"} className={"text-wrap"}>
+                            <span id={"stars-head"} className={"head"}>Stars</span>
+                            <span id={"stars-body"} className={"body"}>When the level is failed or anticheat is triggered because of too many moves in one go, you get 0 gold stars.<br /><br />When the level is cleared with a suboptimal solution, you get 1 gold star.<br /><br />When the level is cleared with one more move than the optimal solution, you get 2 gold stars.<br /><br />When the level is cleared with the optimal solution (or even fewer moves than the optimal solution), you get 3 gold stars.</span>
+                        </div>
+                        <div id={"stars-img-wrapper"} className={"img-wrap"}>
+                            <img src={`${process.env.PUBLIC_URL}/assets/how/gridstarsHEIGHT1000.png`} alt={"stars"} id={"how-stars"} className={"img"}/>
+                        </div>
+                    </section>
                 </div>
             </div>
         </>
