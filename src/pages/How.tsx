@@ -45,6 +45,17 @@ const How = () => {
                             <img src={`${process.env.PUBLIC_URL}/assets/how/gridstarsHEIGHT1000.png`} alt={"stars"} id={"how-stars"} className={"img"}/>
                         </div>
                     </section>
+                    <div id={"back-bt-wrapper"}>
+                        <Route render={({history}) => (
+                            <span
+                                id={"back-bt"}
+                                onClick={() => {
+                                    history.push("/")
+                                }}>
+                            Back
+                        </span>
+                        )} />
+                    </div>
                 </div>
             </div>
         </>
