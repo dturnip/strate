@@ -9,8 +9,8 @@
     justify-content: space-evenly;
 
     > #cb-wrapper {
-        width: 40%;
-        max-width: 400px;
+        width: 35%;
+        max-width: 350px;
         > #coffee-bk {
             width: 100%;
             height: auto;
@@ -18,23 +18,50 @@
         }
     }
 
-    > #bt-wrapper {
-        > #start-bt {
-            @include text($wtintd, 3rem);
-            background: linear-gradient(to left, $vlight 50%, $sblack 50%) right;
-            background-size: 200%;
-            font-weight: bolder;
-            box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5), 0 1px white;
-            border-radius: 1.5vw;
-            padding: 0.5vh 3vw;
-            transition: 0.3s ease-out;
+    > #bts-wrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
 
-            &:hover {
-                background-position: left;
-                cursor: pointer;
-                @include text($sblacke, 3rem);
+        > #start-bt-wrapper {
+            margin-bottom: 30px;
+            > #start-bt {
+                @include text($wtintd, 40px);
+                background: linear-gradient(to left, $vlight 50%, $sblack 50%) right;
+                background-size: 200%;
+                font-weight: bolder;
+                box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5), 0 1px white;
+                border-radius: 10px;
+                padding: 6px 40px;
+                transition: 0.5s ease-out;
+
+                &:hover {
+                    background-position: left;
+                    cursor: pointer;
+                    @include text($sblacke, 40px);
+                }
+
             }
+        }
 
+        > #how-bt-wrapper {
+            > #how-bt {
+                @include text($wtintd, 40px);
+                background: linear-gradient(to right, $vlight 50%, $sblack 50%) left;
+                background-size: 200%;
+                font-weight: bolder;
+                box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5), 0 1px white;
+                border-radius: 10px;
+                padding: 6px 40px;
+                transition: 0.5s ease-out;
+
+                &:hover {
+                    background-position: right;
+                    cursor: pointer;
+                    @include text($sblacke, 40px);
+                }
+
+            }
         }
     }
 }
