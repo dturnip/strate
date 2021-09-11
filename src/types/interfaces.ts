@@ -29,5 +29,12 @@ export interface Meta {
 }
 
 export interface Metas {
-	[key: string]: Meta
+	[key: string]: Meta;
+}
+
+export interface StarProps {
+	usedMoves: number;
+	maxMoves: number;
+	bestMoves: number;
+	clear: boolean;
 }
