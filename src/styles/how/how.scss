@@ -73,6 +73,7 @@
 hr {
   border: 0;
   width: 100%;
-  background-color: $sblackg;
+  background-color: $accentb;
+  filter: grayscale(80%);
   height: 1px;
 }
