@@ -226,7 +226,6 @@ const Tutorial = () => {
                         </span>
                         <Stars
                             usedMoves={getMeta(parseInt(sGet("level"))).moves - parseInt(sGet("moves"))}
-                            maxMoves={getMeta(parseInt(sGet("level"))).moves}
                             bestMoves={getMeta(parseInt(sGet("level"))).cheat.split("").length}
                             clear={clear}
                         />

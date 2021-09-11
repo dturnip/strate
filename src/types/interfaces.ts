@@ -34,7 +34,6 @@ export interface Metas {
 
 export interface StarProps {
 	usedMoves: number;
-	maxMoves: number;
 	bestMoves: number;
 	clear: boolean;
 }

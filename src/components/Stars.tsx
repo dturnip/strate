@@ -4,7 +4,6 @@ import {StarProps} from "../types/interfaces";
 
 export const Stars: React.FC<StarProps> = ({
     usedMoves,
-    maxMoves,
     bestMoves,
     clear,
 }) => {
