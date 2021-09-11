@@ -25,6 +25,16 @@ const How = () => {
                             <img src={`${process.env.PUBLIC_URL}/assets/how/pointsHEIGHT500.png`} alt={"flow"} id={"how-flow"} className={"img"}/>
                         </div>
                     </section>
+                    <hr />
+                    <section id={"utils-sect"} className={"sect"}>
+                        <div id={"utils-img-wrapper"} className={"img-wrap"}>
+                            <img src={`${process.env.PUBLIC_URL}/assets/how/utilsHEIGHT200.png`} alt={"utils"} id={"how-utils"} className={"img"}/>
+                        </div>
+                        <div id={"utils-text-wrapper"} className={"text-wrap"}>
+                            <span id={"utils-head"} className={"head"}>Utils</span>
+                            <span id={"utils-body"} className={"body"}>When stuck on a level, pressing the question mark button will reveal the solution. The arrows revealed correspond to which arrow key to press.<br /><br />The retry button will reset the current level.</span>
+                        </div>
+                    </section>
                 </div>
             </div>
         </>
