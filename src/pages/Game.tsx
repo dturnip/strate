@@ -60,7 +60,6 @@ const Tutorial = () => {
         }
     }
 
-
     const fadeIn: () => void = () => {
         const overlay: HTMLElement | null = document.getElementById("overlay");
         if (overlay && overlay.style.opacity < String(1)) {
@@ -89,6 +88,10 @@ const Tutorial = () => {
                 }
             }, 5);
         }
+    }
+
+    const translateX: (elem: HTMLElement | null, x: number) => void = (elem, x) => {
+        if (elem) elem.style.transform = `translateX(${x}px)`;
     }
 
     const handlePoints: (e: KeyboardEvent) => void = (e) => {
