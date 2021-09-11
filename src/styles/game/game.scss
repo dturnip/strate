@@ -54,6 +54,7 @@ body {
                 margin-left: 10px;
                 border-radius: 5%;
                 box-shadow: 0 2px 4px 2px rgba(72, 58, 42, 0.5);
+                transition: 0.3s ease-out;
 
                 &:hover {
                     color: #C99AF7;
@@ -73,11 +74,13 @@ body {
 
             > #solution-overlay {
                 position: absolute;
-                margin-left: 120px;
-                background-color: $shoot;
-                height: 55px;
+                margin-left: 118px;
+                margin-top: 5px;
+                background-color: $satrb;
+                height: 60px;
                 width: 35vw;
                 max-width: 400px;
+                //transition: transform 500ms ease-in-out 25ms;
             }
         }
     }
