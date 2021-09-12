@@ -68,5 +68,10 @@
     "objective": "Remove all 2 tiles & Get over 1OO points",
     "moves": 7,
     "cheat": "\u2192\u2191\u2190\u2193\u2193"
+  },
+  "14": {
+    "objective": "Get the 512 tile",
+    "moves": 7,
+    "cheat": "\u2192\u2193\u2193\u2190\u2190\u2191"
   }
 }

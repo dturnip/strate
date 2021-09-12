@@ -72,9 +72,14 @@ export const objectiveCheck: StatusFn = (level, moves) => {
                     // Objective: Get over 500 points
                     return check(moves, parseInt(sGet("points"), 10) > 500);
                 case 12:
+                    // Objective: Remove all 32 tiles
                     return check(moves, !currMatrix.includes("32"));
                 case 13:
+                    // Objective: Remove all 2 tiles & Get over 100 points
                     return check(moves, !currMatrix.includes("2") && parseInt(sGet("points"), 10) > 100);
+                case 14:
+                    // Objective: Get the 512 tile
+                    return check(moves, currMatrix.includes("512"));
                 default:
                     console.log("Oops there was an Error");
                     alert("Oops there was an Error");
