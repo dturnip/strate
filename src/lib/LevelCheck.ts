@@ -73,6 +73,8 @@ export const objectiveCheck: StatusFn = (level, moves) => {
                     return check(moves, parseInt(sGet("points"), 10) > 500);
                 case 12:
                     return check(moves, !currMatrix.includes("32"));
+                case 13:
+                    return check(moves, !currMatrix.includes("2") && parseInt(sGet("points"), 10) > 100);
                 default:
                     console.log("Oops there was an Error");
                     alert("Oops there was an Error");
